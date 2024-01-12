@@ -42,13 +42,13 @@ function autoSlide(){
     intervalId = setInterval(nextImage, 5000)
 }
 
-autoSlide()
+ autoSlide()
 
 carouselContainer.addEventListener("mouseenter", ()=>{
     clearInterval(intervalId)
 })
 
 carouselContainer.addEventListener("mouseleave", () => {
-    autoSlide()
+     autoSlide()
 })
 
