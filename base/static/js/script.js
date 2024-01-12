@@ -1,10 +1,13 @@
 console.log("hi there")
 
+let overlay = document.querySelector(".overlay")
 let nextBtn = document.querySelector(".next.btn")
 let prevBtn = document.querySelector(".prev.btn")
 let carouselContainer = document.querySelector(".carousel-container")
 let carouselItems = document.querySelectorAll(".carousel-item")
 let hamburger = document.querySelector('.hamburger')
+let hamburgerSpan = document.querySelectorAll(".hamburger span")
+let navLinks = document.querySelectorAll("nav-links-parent a")
 let mobileMenu = document.querySelector(".mobile-menu")
 let closeMenu = document.querySelector(".close-menu")
 
@@ -13,6 +16,18 @@ let touchStartX
 let touchEndX
 let swipeDifference
 let threshold = 50
+console.log(navLinks)
+window.addEventListener("scroll", () => {
+    console.log(scrollY)
+    if(scrollY > 0){
+        document.querySelector("nav").classList.add("active")
+        hamburgerSpan.forEach(el => el.style.backgroundColor = "black")
+    }else{
+        document.querySelector("nav").classList.remove("active")
+        hamburgerSpan.forEach(el => el.style.backgroundColor = "white")
+    }
+})
+
 
 nextBtn.addEventListener("click", nextImage)
 function nextImage(){
@@ -46,26 +61,40 @@ function prevImage(){
 let intervalId
 
 function autoSlide(){
-    intervalId = setInterval(nextImage, 5000)
+    intervalId = setInterval(nextImage, 3000)
 }
 
 
-// autoSlide()
+autoSlide()
 
 function touchSlide(){
     carouselContainer.addEventListener("touchstart", (e) => {
-        touchStartX = e.client[0].touches
+        touchStartX = e.touches[0].clientX
     })
     
 
-    carouselContainer.addEventListener("touchmove", () => {
-        touchEndX = e.client[0].touches
+    carouselContainer.addEventListener("touchmove", (e) => {
+        touchEndX = e.touches[0].clientX
+        // console.log(touchEndX)
+
     })
 
-    carouselContainer.addEventListener("touchend", () => {
-        swipeDifference = touchStartX - touchEndX
-        console.log(swipeDifference)
+    carouselContainer.addEventListener("touchend", function(e){
+        // carouselItems.forEach(el => {
+        //     console.log(el.childNodes)
+        // })
 
+        //this script is to prevent swipe if we click on any of the children of the carousel items
+        if(e.target.closest(".carousel-item > button "))return
+
+        swipeDifference = touchStartX - touchEndX
+        if(swipeDifference > threshold){
+            console.log("swiped right")
+            nextImage()
+        }else if(swipeDifference < -threshold){
+            console.log("swiped left")
+            prevImage()
+        }
     })
 }
 
@@ -76,13 +105,19 @@ carouselContainer.addEventListener("mouseenter", ()=>{
 })
 
 carouselContainer.addEventListener("mouseleave", () => {
-    // autoSlide()
+    autoSlide()
 })
 
 hamburger.addEventListener("click", () => {
     mobileMenu.classList.add("open")
+    overlay.style.display = "block"
+    // document.body.style.overflowY = "hidden"
 })
 
 closeMenu.addEventListener("click", () => {
     mobileMenu.classList.remove("open")
+    overlay.style.display = "none"
+    // document.body.style.overflowY = "auto"
+
+
 })

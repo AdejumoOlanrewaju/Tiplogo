@@ -50,12 +50,27 @@ button{
     border : none;
 }
 
+.overlay{
+    position : fixed;
+    width : 90%;
+    height : 100%;
+    background : rgba(0,0,0,.07);
+    backdrop-filter : blur(4px);
+    z-index : 999;
+    display: none;
+}
+
 nav{
-    padding : 20px 0;
+    padding : 12px 0;
     position : fixed;
     top : 0;
     width : 100%;
     z-index : 10;
+    transition : background-color .5s ease;
+}
+
+nav.active{
+    background-color : white;
 }
 
 nav .container{
@@ -97,7 +112,7 @@ nav .container{
     gap : 6px;
     width : 40px;
     /* height : 40px; */
-    background : black;
+    /* background : black; */
     padding : 10px;
     /* margin : 0 20px 0 auto; */
     cursor : pointer
@@ -109,15 +124,16 @@ nav .container{
     border-radius: 10px;
     background-color: var(--text-clr);
     border-radius : 10px;
+    transition : background-color .3s ease;
 }
-
+.mobile-subscribe-btn,
 .subscribe-btn{
     background-color: var(--btn-clr);
     padding : 10px 25px;
     border-radius: 50px;
-    color : white;      
+    color : white;   
+    display : inline-block;   
     /* margin : 0 20px 0 auto; */
-    
 }
 
 .mobile-menu{
@@ -126,10 +142,15 @@ nav .container{
     right : -100%;
     background-color : white;
     z-index : 999;
-    height : 100vh;
+    height: 100vh;
+    height : 100dvh;
     width : 100%;
-    max-width : 400px;
-    padding : 15px;
+    max-width : 300px;
+    padding : 0 0 15px;
+    display : flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    align-items: start;
     transition: right .5s ease;
 }
 
@@ -141,6 +162,9 @@ nav .container{
     display : flex;
     align-items: center;
     justify-content: space-between;
+    border-bottom : 1px solid rgba(0,0,0,.3);
+    padding: 15px 0 15px 15px;
+    width : 100%;
 }
 
 .close-menu{
@@ -149,49 +173,62 @@ nav .container{
     justify-content: center;
     align-items: center;
     width: 40px;
-    background-color: black;
+    /* background-color: black; */
     padding: 15px 25px 18px;
     border-radius: 5px;
     cursor : pointer;
 }
 
 .close-menu span{
-    height : 5px;
+    height : 2px;
     width : 30px;
-    background-color: white;
-    border-radius : 10px;
+    background-color: black;
+    border-radius : 15px;
 
 }
 
 .close-menu span:nth-child(1){
-    transform: rotate(45deg) translate(3px, 3px);
+    transform: rotate(45deg) translate(1px, 1px);
 }
 
 .close-menu span:nth-child(2){
     transform : rotate(-45deg) translate(0px, -1px)
 }
+
+.mobile-navigation{
+    width : 100%;
+    margin-top : 30px;
+}
+
 .mobile-links-parent{
     display : flex;
     flex-direction : column;
-    margin : 50px 0 0;
+    margin : 0px 0 0;
     gap : 10px;
+    padding : 0px 0 40px 0px;
+    width : 100%;
+    border-bottom: 1px solid rgba(0,0,0,.3);
 }
 
-.mobile-links-parent li{
-    border-radius : 5px;
-    transition : background-color .5s, padding .5s;
-    padding : 15px 0px;
-
-}
-
-.mobile-links-parent li:hover{
-    background-color: #d4d4d4;
-    padding : 15px 12px;
-}
 
 .mobile-links-parent .nav-link{
     color : black;
     font-size : 1rem;
+    border-radius : 5px;
+    padding : 15px 0px 15px 10px;
+    width : 100%;
+    display : inline-block;
+    transition : background-color .5s, padding .5s;
+}
+
+.mobile-links-parent a:hover{
+    background-color: #d4d4d4;
+    padding : 15px 0px 15px 20px;
+
+}
+
+.mobile-subscribe-btn{
+    margin: 15px 0 20px 15px;
 }
 
 header{
@@ -248,8 +285,8 @@ header{
     height: 100%;
     display: flex;
     flex-direction: column;
-        justify-content: flex-start;
-        padding-top : 100px;
+    justify-content: flex-start;
+    padding-top : 150px;
     align-items: center;
     /* padding-top : 40px; */
 }
@@ -401,6 +438,11 @@ header{
     transition-timing-function: ease;
 }
 
+main section{
+    height : 100vh;
+    background-color : black;
+}
+
 @media(max-width : 1100px){
     nav .container{
         justify-content: flex-start;
@@ -408,7 +450,8 @@ header{
 
     .hamburger{
         display : flex;
-        order : 2;
+        margin-left : auto;
+        /* order : 2; */
     }
 
     .nav-links-parent{
@@ -416,8 +459,8 @@ header{
     }
 
     .subscribe-btn{
-        margin : 0 20px 0 auto;
-
+        /* margin : 0 20px 0 auto; */
+        display : none;
     }
 }
 
@@ -437,6 +480,8 @@ header{
     }
 }
 
+
+
 /* @media(max-width : 600px){
   
 } */
@@ -444,6 +489,7 @@ header{
 @media(max-width : 400px){
     header{
         height : 70vh;
+        min-height: 450px;
     }
 
 
@@ -451,12 +497,12 @@ header{
         padding : 5px;
         font-size : 1.3rem;
     }
-
+/* 
     .subscribe-btn{
         padding : 10px;
         margin : 0 10px 0 auto;
         font-size : .8rem;
-    }
+    } */
 
 
     .carousel-item h4{
