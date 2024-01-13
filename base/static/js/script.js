@@ -49,7 +49,7 @@ function autoSlide(){
     intervalId = setInterval(nextImage, 5000)
 }
 
-// autoSlide()
+autoSlide()
 
 function touchSlide(){
     carouselContainer.addEventListener("touchstart", (e) => {
@@ -75,7 +75,7 @@ carouselContainer.addEventListener("mouseenter", ()=>{
 })
 
 carouselContainer.addEventListener("mouseleave", () => {
-    // autoSlide()
+    autoSlide()
 })
 
 hamburger.addEventListener("click", () => {
