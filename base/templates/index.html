@@ -9,6 +9,7 @@
     <title>Document</title>
 </head>
 <body>
+    <div class = "overlay"></div>
     <header>
         <nav>
             <div class = "container">
@@ -19,7 +20,7 @@
                 <div class = "hamburger">
                     <span></span>
                     <span></span>
-                    <span></span>
+                    <span></spagn>
                 </div>
                 
                 
@@ -47,14 +48,20 @@
                 </div>
             </div>
 
-            <ul class = "mobile-links-parent">
-                <li><a href = "#" class = "nav-link">HOME</a></li>
-                <li><a href = "#" class = "nav-link">TIPLOGO CBT CENTER</a></li>
-                <li><a href = "#" class = "nav-link">TIPLOGO LED BULBS</a></li>
-                <li><a href = "#" class = "nav-link">TIPLOGO LOGISTICS</a></li>
-                <li><a href = "#" class = "nav-link">TIPLOGO ICT</a></li>
-                <li><a href = "#" class = "nav-link">TIPLOGO SEA FOODS</a></li>
-            </ul>
+            <div class = "mobile-navigation">
+                <ul class = "mobile-links-parent">
+                    <li><a href = "#" class = "nav-link">HOME</a></li>
+                    <li><a href = "#" class = "nav-link">TIPLOGO CBT CENTER</a></li>
+                    <li><a href = "#" class = "nav-link">TIPLOGO LED BULBS</a></li>
+                    <li><a href = "#" class = "nav-link">TIPLOGO LOGISTICS</a></li>
+                    <li><a href = "#" class = "nav-link">TIPLOGO ICT</a></li>
+                    <li><a href = "#" class = "nav-link">TIPLOGO SEA FOODS</a></li>
+                </ul>
+    
+                <a class = "mobile-subscribe-btn" href = "news">Subscribe</a>
+            </div>
+
+            
         </div>
 
         <div class = 'carousel-wrapper'>
@@ -120,8 +127,8 @@
                             iusto deserunt ducimus, rem magni autem eligendi blanditiis.
                         </p>
                         <div class = "header-cta-container">
-                            <a href = "#" class = "cta-1">GET STARTED NOW</a>
-                            <a href = "#" class = "cta-2">EXPLORE</a>
+                            <a href = "/mail" class = "cta-1">GET STARTED NOW</a>
+                            <a href = "{% url 'mail' %}" class = "cta-2">EXPLORE</a>
                         </div>
                     </div>
 
@@ -135,5 +142,9 @@
             </div>
         </div>
     </header>
+
+    <main>
+        <section></section>
+    </main>
 </body>
 </html>

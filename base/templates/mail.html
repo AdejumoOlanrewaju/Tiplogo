@@ -1,0 +1,11 @@
+<form method="post">
+    {% for messages in messages %}
+    {{messages}}
+    {% endfor %}
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">send</button>
+</form>
+{% for subcriber in subcriber %}
+ {{subcriber.email}}
+{% endfor  %}

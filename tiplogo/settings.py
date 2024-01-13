@@ -37,8 +37,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'base'
+    'base',
+    'django_pandas', 
 ]
+# DJANGO_PANDAS ={
+#     'PANDAS_LOADER':
+#     'django_pandas.io.read_frame',
+#     'SERIALIZER_METHODS': {
+#         'DataFrame': 'tolist',
+#     }
+# }
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -125,3 +133,11 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS =True
+EMAIL_USE_SSL =False
+EMAIL_HOST_USER = 'vacan400@gmail.com'
+EMAIL_HOST_PASSWORD ='ujrfgqljoflzinpb'
+EMAIL_PORT = 587
