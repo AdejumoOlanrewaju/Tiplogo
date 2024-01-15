@@ -1,4 +1,4 @@
-from django_pandas.io import  read_frame 
+ 
 from django.shortcuts import render ,redirect
 from .forms import SubcribersForm ,MailMessageForm
 from django.views import generic

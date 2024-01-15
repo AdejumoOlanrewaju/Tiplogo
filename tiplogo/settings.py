@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'base',
-    'django_pandas', 
+   
 ]
 # DJANGO_PANDAS ={
 #     'PANDAS_LOADER':
