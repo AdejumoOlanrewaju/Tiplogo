@@ -603,8 +603,22 @@ header{
     justify-content: center;
     align-items : center;
     gap : 30px;
+    position : relative;
 }
 
+.tab-links{
+    cursor : pointer;
+}
+
+.tab-line{
+    position : absolute;
+    bottom : 0;
+    width : 0%;
+    left : 0;
+    background : var(--b-theme-clr);
+    height: 7px;
+    opacity: 0;
+}
 
 @media(max-width : 1100px){
     nav .container{
