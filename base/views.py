@@ -1,3 +1,4 @@
+
 from typing import Any
 from django.core.mail import EmailMessage
 from django.shortcuts import render ,redirect

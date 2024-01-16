@@ -38,9 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'base',
-    'ckeditor',
+    'ckeditor'
+
    
 ]
+  
 # DJANGO_PANDAS ={
 #     'PANDAS_LOADER':
 #     'django_pandas.io.read_frame',
