@@ -1,0 +1,12 @@
+<!-- contact_us.html -->
+
+
+
+
+  <h2>Contact Us</h2>
+  <form method="post" action="{% url 'contact' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+  </form>
+
