@@ -594,8 +594,15 @@ header{
     margin : auto;
 }
 
-.products-section .subhead span{
+.product-section .subhead span{
     background : #ecebeb;
+}
+
+.products-tab{
+    display : flex;
+    justify-content: center;
+    align-items : center;
+    gap : 30px;
 }
 
 
