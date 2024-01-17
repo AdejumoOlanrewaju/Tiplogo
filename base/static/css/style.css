@@ -480,11 +480,11 @@ header{
 
 }
 
-.services-head-container{
+.head-container{
     padding : 60px 0 0 0;
 }
 
-.services-subhead{
+.subhead{
     margin : 0px;
     /* padding : 20px 0 0px; */
     text-align : center;
@@ -495,12 +495,12 @@ header{
 
 }
 
-.services-subhead span{
+.subhead span{
     background-color: #f2f2f2;
     padding : 0 10px;
 }
 
-.services-subhead span::after{
+.subhead span::after{
     content : '';
     position : absolute;
     top : calc(50% + 1px);
@@ -509,10 +509,10 @@ header{
     width : 20%;
     height : 3px;
     background-color : var(--b-theme-clr);
-    transform : translate(-50%, -50%)
+    transform : translate(-50%, -50%);
 }
 
-.services-head{
+.head{
     font-size : clamp(2.5rem, 5.5vw, 4rem);
     text-align : center;
      
@@ -521,19 +521,21 @@ header{
 .service-boxes-container{
     display : flex;
     gap : 20px;
-    align-items : center;
+    /* align-items : center; */
+    justify-content: center;
     flex-wrap : wrap;
     width : 90%;
-    max-width : 1000px;
+    max-width : 1200px;
     margin : auto;
 
 }
 
 .service-box{
-    padding : 20px;
+    padding : 40px 10px;
     text-align : center;
     background-color : rgb(101 176 255 / 12%);
-    width : 300px;
+    width : 100%;
+    max-width : 350px;
     border-radius : 10px;
 }
 
@@ -580,6 +582,18 @@ header{
     width : 90%;
     margin : 10px auto 0;
 }
+
+.product-section{
+    background: #ecebeb;
+    height : 100vh;
+}
+
+.products-content-container
+
+.products-section .subhead span{
+    background : #ecebeb;
+}
+
 
 @media(max-width : 1100px){
     nav .container{

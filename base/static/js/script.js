@@ -1,5 +1,3 @@
-console.log("hi there")
-
 let overlay = document.querySelector(".overlay")
 let nextBtn = document.querySelector(".next.btn")
 let prevBtn = document.querySelector(".prev.btn")
@@ -17,6 +15,7 @@ let touchEndX
 let swipeDifference
 let threshold = 50
 console.log(navLinks)
+console.log(scrollY)
 window.addEventListener("scroll", () => {
     console.log(scrollY)
     if(scrollY > 0){
