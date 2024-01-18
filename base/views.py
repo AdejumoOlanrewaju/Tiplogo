@@ -19,10 +19,6 @@ from django.contrib import auth
  
 # Create your views here.
 def index(request):
-
-    return render(request, 'index.html')
-
-def news(request):
     email =Subcribers.email
     if request.method == 'POST':
      form =SubcribersForm(request.POST)
@@ -54,6 +50,11 @@ def send_thanks_mail(email):
         fail_silently=True
     )
     
+
+    return render(request, 'index.html')
+
+
+   
        
         
 def mail(request):
