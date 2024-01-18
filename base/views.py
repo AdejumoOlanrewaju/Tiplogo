@@ -1,17 +1,20 @@
 
 from typing import Any
 from django.core.mail import EmailMessage
-from django.shortcuts import render ,redirect
-from .forms import SubcribersForm ,MailMessageForm ,ContactForm, EmailTemplateForm
+from django.shortcuts import render ,redirect ,get_object_or_404
+from .forms import SubcribersForm ,MailMessageForm ,ContactForm, EmailTemplateForm,TiplogoPostForm
 from django.views import generic
 from django.urls import reverse
 from django.contrib import messages
-from .models import Subcribers ,MailMessage ,EmailTemplate
+from .models import Subcribers ,MailMessage ,EmailTemplate, TiplogoPost
 from  django.core.mail import send_mail
 from django.conf import settings
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.core.management.base import BaseCommand
+from django.contrib.auth import authenticate
+from django.views import generic
+from django.contrib import auth
 
  
 # Create your views here.
@@ -61,18 +64,19 @@ def mail(request):
             message =form.cleaned_data['message']
             from_email =settings.DEFAULT_FROM_EMAIL
             subcriber_list =Subcribers.objects.values_list('email',flat=True)
+            recipients_list =list(subcriber_list)
             print(subcriber_list)
-            for subcriber_list in subcriber_list:
-                        email =EmailMessage(
-                            subject,
-                            message,
-                            from_email,
-                            [subcriber_list],
-                            
-                        )
-                        email.send()
-                        messages.success(request, f'email sent successfully  to {subcriber_list}')
-                        return redirect ('mail')
+            
+            email =EmailMessage(
+                subject,
+                message,
+                from_email,
+            recipients_list
+                
+            )
+            email.send()
+            messages.success(request, f'email sent successfully  to{subcriber_list}')
+            return redirect ('mail')
     else:
             form = EmailTemplateForm()
             context ={
@@ -138,4 +142,101 @@ def contact(request):
 
 
        
- 
+def tiplogo_cbt(request):
+    return render (request, 'tiplogo_cbt.html')
+def tiplogo_fish(request):
+    return render (request, 'tiplogo_fish.html')
+def tiplogo_ict(request):
+    return render (request, 'tiplogo_ict.html')
+def tiplogo_led(request):
+    return render (request, 'tiplogo_led.html')
+def tiplogo_logistics(request):
+    return render (request, 'tiplogo_logistics.html')
+def login(request):
+    if request.method =='POST':
+        username =request.POST['username']
+        password =request.POST['password']
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            auth.login(request,user)
+            return redirect ('tiplogo-post')
+        else:
+            messages.error(request, 'username and password do not match')
+            return redirect ('login')
+    else:
+        return render ( request, 'TIPLOGO CMS/login.html')
+    
+# TIPLOGO CONTENT MANAGEMENT SYSTEM
+
+class tiplogopostview(generic.CreateView):
+    template_name = 'TIPLOGO CMS/tiplogo_post.html'
+    form_class = TiplogoPostForm
+    def get_success_url(self):
+        return reverse('post-list')
+    
+class postpageview(generic.ListView):
+    template_name = 'TIPLOGO CMS/post_list.html'
+    queryset = TiplogoPost.objects.all()
+    context_object_name = 'post_list'
+    def post_list(request):
+        post_list = TiplogoPost.objects.all()
+        context = {
+            'post_list':post_list
+        }
+        return render (request , 'TIPLOGO CMS/post_list.html',context)
+    
+class PostUpdateView(generic.UpdateView):
+    model = TiplogoPost
+    form_class = TiplogoPostForm
+    template_name = 'TIPLOGO CMS/update.html'
+    def get_success_url(self):
+        return reverse('post-list')
+    def update(request ,pk):
+        if request.method == 'POST':
+            instance = get_object_or_404(TiplogoPost ,pk=pk)
+            form = TiplogoPostForm(request.POST, instance=instance)
+            if form.is_valid():
+                form.save()
+                return redirect('post-list')
+        else:
+            form = TiplogoPostForm(instance=instance)
+            context = {
+                'form':form
+            }
+            return render(request, 'update.html',context)
+    
+class DeletePostView(generic.DeleteView):
+    model = TiplogoPost
+    template_name = 'TIPLOGO CMS/delete.html'
+    def get_success_url(self):
+        return reverse('post-list')
+
+class tiplogofishpost(generic.CreateView):
+    template_name = 'fishpost.html'
+    model = tiplogo_fish
+    def get_success_url(self):
+        return reverse ('post-list')
+    
+
+class fishpostupdateview(generic.UpdateView):
+    template_name = 'fishupdate.html'
+    form_class = 'fishform'
+    model = TiplogoPost
+    def get_success_url(self):
+        return reverse('post-list')
+    def  updatefish(request , pk):
+        instance = get_object_or_404 (TiplogoPost ,pk=pk)
+        if request.method == 'POST':
+            form = TiplogoPostForm(request.POST, instance=instance)
+            if form.is_valid():
+                form.save()
+                return redirect ('post-list')
+        else:
+            form = TiplogoPostForm(instance=instance)
+            context= {
+                'form':form
+            }
+            return render (request, 'fishupdate.html',context)
+            
+        
+

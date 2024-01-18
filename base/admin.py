@@ -1,12 +1,11 @@
 from django.contrib import admin
-from  .models import Subcribers ,MailMessage ,EmailTemplate 
+from  .models import Subcribers ,MailMessage ,EmailTemplate, TiplogoPost 
 from django import forms
 from django.conf import settings
 from django.core.mail import send_mail
 from ckeditor.fields import RichTextField
 
 # Register your models here.
-
 
 
 class EmailTemplateFormAdminForm(forms.ModelForm):
@@ -17,6 +16,7 @@ class EmailTemplateFormAdminForm(forms.ModelForm):
             'message':RichTextField(),
 
         }
+
 
 class EmailTemplateAdmin(admin.ModelAdmin):
     form =EmailTemplateFormAdminForm
@@ -35,4 +35,5 @@ class EmailTemplateAdmin(admin.ModelAdmin):
 
 admin.site.register(Subcribers)
 admin.site.register(MailMessage)
+admin.site.register(TiplogoPost)
 admin.site.register(EmailTemplate,EmailTemplateAdmin)
