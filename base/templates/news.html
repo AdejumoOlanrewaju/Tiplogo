@@ -1,8 +1,141 @@
-<form method="post">
-    {% for messages in messages %}
-    {{messages}}
-    {% endfor %}
-    {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit">send</button>
-</form>
+<body>
+    <div class="container">
+        <header>
+            <h1>Your Newsletter</h1>
+        </header>
+
+        <div class="content">
+            <!-- Alert Section -->
+            
+            <div class="alert">
+                {% for messages in messages %}
+                <strong>Alert:</strong>  {{messages}}
+                {% endfor %}
+            </div>
+           
+
+            <form method="post">
+                
+                {% csrf_token %}
+                <h2>Email Subscription Form</h2>
+                {{form.as_p}}
+                <input type="submit" value="Subscribe">
+            </form>
+            
+        <!-- Footer Section -->
+        <footer>
+            <p>&copy; 2024 Your Company | <a href="#">Unsubscribe</a></p>
+        </footer>
+    </div>
+</body>
+
+
+    <style>
+        /* Reset some default styles */
+        body,
+        h1,
+        h2,
+        h3,
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* Header */
+        header {
+            background-color: #3498db;
+            padding: 20px;
+            color: #fff;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 24px;
+        }
+
+        /* Content */
+        .content {
+            padding: 20px;
+        }
+
+        /* Alert */
+        .alert {
+            background-color: #e74c3c;
+            color: #fff;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        /* Articles */
+        article {
+            margin-bottom: 20px;
+        }
+
+        article h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        article p {
+            font-size: 16px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            border-top: 1px solid #fff;
+        }
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+        input[type="email"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #3498db;
+            color: #fff;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #2187c5;
+        }
+       
+
+    </style>
