@@ -53,6 +53,12 @@ a{
 
 button{
     border : none;
+    cursor: pointer;
+    transition : transform .5s ease;
+}
+
+button:active{
+    transform : scale(.8)
 }
 
 .overlay{
@@ -783,6 +789,12 @@ header{
     overflow-x : auto;
     scroll-snap-type: x mandatory;
     scroll-padding : 0 10px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.testimonial-scroll-section::-webkit-scrollbar{
+    display: none;
 }
 
 .testimonial{
@@ -794,8 +806,6 @@ header{
     height : max-content;
     scroll-snap-align: start;
 }
-
-
 
 .testimonial p{
     margin : 0 0 5px;
@@ -812,6 +822,27 @@ header{
 .client-profession{
     color : var(--text-dark-clr-600);
     font-size : 15px;
+}
+
+.testimonial-btn-container{
+    max-width : 500px;
+    width : 90%;
+    margin :20px auto 0;
+    /* border : 1px solid red; */
+    text-align: center  ;
+}
+
+.testimonial-btn-container button{
+    padding : 20px;
+    border-radius : 50%;
+    background-color: var(--boxes-theme-clr);
+    font-size : 20px;
+    
+    
+}
+
+.testimonial-btn-container .next-btn{
+    margin-left : 30px;
 }
 
 /* .testimonial-section .subhead span::after{

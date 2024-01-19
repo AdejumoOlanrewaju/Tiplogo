@@ -11,6 +11,9 @@ let closeMenu = document.querySelector(".close-menu")
 let tabLinks = document.querySelectorAll(".tab-links")
 let tabLine = document.querySelector(".tab-line")
 let productBoxes = document.querySelectorAll(".product-box")
+let testimonialScrollSection = document.querySelector(".testimonial-scroll-section")
+let testimonialScrollBtn = document.querySelectorAll(".testimonial-btn-container button")
+let testimonial = document.querySelectorAll(".testimonial")
 
 let counter = 0
 let touchStartX
@@ -86,23 +89,6 @@ function categorizeProducts(link){
     }
 }
 
-// for(let [index, link] of tabLinks.entries()){
-//     console.log(index, link)
-// }
-
-/**
- * if(this.dataset.category == "all"){
- *      categories.forEach(el => el.classList.remove("close"))
- * }else{
- *    categories.forEach(el => el.classList.add("close"))
- *     document.querySelector(`#${this.dataset.category}`).classList.remove("close")
- * }
- */
-
-/**
- * (index/items.length) * 100%
- */
-
 nextBtn.addEventListener("click", nextImage)
 function nextImage(){
     carouselItems[counter].style.animation = "next1 .5s ease forwards"
@@ -153,10 +139,6 @@ function touchSlide(){
     })
 
     carouselContainer.addEventListener("touchend", function(e){
-        // carouselItems.forEach(el => {
-        //     console.log(el.childNodes)
-        // })
-
         //this script is to prevent swipe if we click on any of the children of the carousel items
         if(e.target.closest(".carousel-item > button "))return
 
@@ -194,3 +176,68 @@ closeMenu.addEventListener("click", () => {
 
 
 })
+
+// Script to handle testimonial scroll
+testimonialScrollBtn.forEach(btn => btn.addEventListener("click", ChangeTesMove))
+
+
+let moveX = 0
+function ChangeTesMove(){
+    let tesWidth;
+    testimonial.forEach(el =>  {
+        tesWidth = el.clientWidth
+    })
+
+    moveX = testimonialScrollSection.scrollLeft
+    this.className == "next-btn" ? moveX += tesWidth : moveX -= tesWidth
+    if(moveX < 0){
+        moveX = 0
+    }
+    testimonialScrollSection.scrollLeft = moveX
+    // console.log(testimonialScrollSection.scrollLeft)
+    console.log((moveX))
+    this.className == "next-btn" ? disableNextBtn(this) : disablePrevBtn(this)
+}
+
+function disableNextBtn(el){
+    console.log(el)
+    let tesCount = (testimonialScrollSection.scrollWidth - testimonialScrollSection.clientWidth)
+
+    // console.log(testimonialScrollSection.scrollWidth - testimonialScrollSection.clientWidth)
+    console.log(tesCount)
+    // console.log(moveX)
+    if(moveX == tesCount){
+        // el.disabled = "true"
+        console.log("treee")
+    }
+}
+
+function disablePrevBtn(el){
+console.log(el)
+// console.log(moveX)
+
+    if(testimonialScrollSection.scrollLeft == 5){
+        console.log(el)
+    }
+}
+
+// for(let [index, link] of tabLinks.entries()){
+//     console.log(index, link)
+// }
+
+/**
+ * if(this.dataset.category == "all"){
+ *      categories.forEach(el => el.classList.remove("close"))
+ * }else{
+ *    categories.forEach(el => el.classList.add("close"))
+ *     document.querySelector(`#${this.dataset.category}`).classList.remove("close")
+ * }
+ */
+
+/**
+ * (index/items.length) * 100%
+ */
+
+// carouselItems.forEach(el => {
+//     console.log(el.childNodes)
+// })
