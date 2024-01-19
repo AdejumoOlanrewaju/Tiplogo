@@ -10,6 +10,7 @@ let mobileMenu = document.querySelector(".mobile-menu")
 let closeMenu = document.querySelector(".close-menu")
 let tabLinks = document.querySelectorAll(".tab-links")
 let tabLine = document.querySelector(".tab-line")
+let productBoxes = document.querySelectorAll(".product-box")
 
 let counter = 0
 let touchStartX
@@ -19,7 +20,9 @@ let threshold = 50
 
 tabLine.style.width = `${tabLinks[0].offsetWidth}px`
 tabLine.style.left = `${tabLinks[0].offsetLeft}px`
-tabLine.style.opacity = "1"
+tabLine.style.opacity = 1
+// if(tabLine.style.left == tabLinks[0].offsetLeft){
+// }
 
 window.addEventListener("scroll", () => {
     if(scrollY > 0){
@@ -36,20 +39,65 @@ window.addEventListener("scroll", () => {
 let width;
 let leftPosition
 tabLinks.forEach((link, index) => {
-    link.addEventListener("click", () => {
-        width = link.offsetWidth
-        leftPosition = link.offsetLeft
-        tabLine.style.width = `${link.offsetWidth}px`
-        tabLine.style.left = `${link.offsetLeft}px`
-        // tabLine.style.left = `${(index / tabLinks.length) * 100}%`
-        console.log(((index + 1) / tabLinks.length) * 100)
-        
-    })
-}) 
+    link.addEventListener("click", (e) => {
+        animateTabline(e, link)
+        categorizeProducts(link)
+    }) 
+
+})
+
+function animateTabline(e, link){
+    e.preventDefault()
+    width = link.offsetWidth
+    leftPosition = link.offsetLeft
+    tabLine.style.width = `${width}px`
+    tabLine.style.left = `${leftPosition}px`   
+}
+
+function categorizeProducts(link){
+    if(link.dataset.category == "all"){
+        productBoxes.forEach(el => {
+            el.style.display = "block"
+            el.classList.remove("hide")
+            el.style.width = '300px'
+            el.style.maxHeight = '450px'
+        })
+
+    }else{
+        productBoxes.forEach(el => {
+            el.classList.add("hide")
+            setTimeout(() => {
+                el.style.width = 0
+                el.style.maxHeight = 0
+                el.style.display = "none"
+            }, 500)
+        })
+
+        document.querySelectorAll(`#${link.dataset.category}`).forEach(el => {
+            el.classList.remove("hide")
+            setTimeout(() => {
+                el.style.display = "block"
+                el.style.width = '300px'
+                el.style.maxHeight = '450px'
+
+            }, 500)
+        })
+
+    }
+}
 
 // for(let [index, link] of tabLinks.entries()){
 //     console.log(index, link)
 // }
+
+/**
+ * if(this.dataset.category == "all"){
+ *      categories.forEach(el => el.classList.remove("close"))
+ * }else{
+ *    categories.forEach(el => el.classList.add("close"))
+ *     document.querySelector(`#${this.dataset.category}`).classList.remove("close")
+ * }
+ */
 
 /**
  * (index/items.length) * 100%
