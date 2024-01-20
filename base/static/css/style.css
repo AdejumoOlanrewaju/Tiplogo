@@ -781,6 +781,7 @@ header{
 .testimonial-scroll-section{
     max-width : 1200px;
     width : 90%;
+    height : 300px;
     margin: auto;
     display : flex;
     align-items : center;
@@ -799,11 +800,11 @@ header{
 
 .testimonial{
     flex : 1 0 calc(25% - 5px);
-    height : 250px;
+    height : 200px;
     background-color: var(--boxes-theme-clr);
-    padding : 10px 15px;
+    padding : 0px 15px;
     border-radius : 10px;
-    height : max-content;
+    position : relative;
     scroll-snap-align: start;
 }
 
@@ -813,6 +814,34 @@ header{
 
 .testimonial-words{
     color : var(--text-dark-clr-600);
+    position : absolute;
+    top : -44px;
+}
+
+.quote-icon{
+    height: 80px;
+    width: 80px;
+    /* position: absolute; */
+    object-fit: cover;
+    transform: translate(0px, 18px)
+
+}
+
+.client-info{
+    display : flex;
+    gap : 10px;
+    align-items : center;
+    padding : 10px 0;
+    position: absolute;
+    bottom: 0;
+}
+
+.client-img{
+    width : 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .client-name{
@@ -823,6 +852,8 @@ header{
     color : var(--text-dark-clr-600);
     font-size : 15px;
 }
+
+
 
 .testimonial-btn-container{
     max-width : 500px;
@@ -895,7 +926,7 @@ header{
 }
 
 /* @media(max-width : 600px){
-  
+
 } */
 
 @media(max-width : 400px){
@@ -995,4 +1026,3 @@ header{
         left : 0%;
     }
 }
-
