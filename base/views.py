@@ -2,11 +2,11 @@
 from typing import Any
 from django.core.mail import EmailMessage
 from django.shortcuts import render ,redirect ,get_object_or_404
-from .forms import SubcribersForm ,MailMessageForm ,ContactForm, EmailTemplateForm,TiplogoPostForm
+from .forms import SubcribersForm ,MailMessageForm ,ContactForm, EmailTemplateForm,TiplogoPostForm,FishPostForm,JambPostForm
 from django.views import generic
 from django.urls import reverse
 from django.contrib import messages
-from .models import Subcribers ,MailMessage ,EmailTemplate, TiplogoPost
+from .models import Subcribers ,MailMessage ,EmailTemplate, TiplogoPost ,FishPost,JambPost
 from  django.core.mail import send_mail
 from django.conf import settings
 from django.template.loader import render_to_string
@@ -144,14 +144,19 @@ def contact(request):
        
 def tiplogo_cbt(request):
     return render (request, 'tiplogo_cbt.html')
+
 def tiplogo_fish(request):
     return render (request, 'tiplogo_fish.html')
+
 def tiplogo_ict(request):
     return render (request, 'tiplogo_ict.html')
+
 def tiplogo_led(request):
     return render (request, 'tiplogo_led.html')
+
 def tiplogo_logistics(request):
     return render (request, 'tiplogo_logistics.html')
+
 def login(request):
     if request.method =='POST':
         username =request.POST['username']
@@ -167,9 +172,11 @@ def login(request):
         return render ( request, 'TIPLOGO CMS/login.html')
     
 # TIPLOGO CONTENT MANAGEMENT SYSTEM
-
+    
+ # <<<<<<<--------------------------LED CMS POST ------------------------------------->>>>>>
+    
 class tiplogopostview(generic.CreateView):
-    template_name = 'TIPLOGO CMS/tiplogo_post.html'
+    template_name = 'TIPLOGO CMS/LED/tiplogo_post.html'
     form_class = TiplogoPostForm
     def get_success_url(self):
         return reverse('post-list')
@@ -210,33 +217,90 @@ class DeletePostView(generic.DeleteView):
     template_name = 'TIPLOGO CMS/delete.html'
     def get_success_url(self):
         return reverse('post-list')
+    
+     # <<<<<<<--------------------------FISH CMS POST ------------------------------------->>>>>>
 
 class tiplogofishpost(generic.CreateView):
-    template_name = 'fishpost.html'
-    model = tiplogo_fish
+    template_name = 'TIPLOGO CMS/FISH/fish_post.html'
+    model = FishPost
+    form_class = FishPostForm
     def get_success_url(self):
         return reverse ('post-list')
     
 
 class fishpostupdateview(generic.UpdateView):
-    template_name = 'fishupdate.html'
-    form_class = 'fishform'
-    model = TiplogoPost
+    template_name = 'TIPLOGO CMS/FISH/update.html'
+    form_class = FishPostForm
+    model =  FishPost
     def get_success_url(self):
         return reverse('post-list')
     def  updatefish(request , pk):
-        instance = get_object_or_404 (TiplogoPost ,pk=pk)
+        instance = get_object_or_404 (FishPost ,pk=pk)
         if request.method == 'POST':
-            form = TiplogoPostForm(request.POST, instance=instance)
+            form = FishPostForm(request.POST, instance=instance)
             if form.is_valid():
                 form.save()
                 return redirect ('post-list')
         else:
-            form = TiplogoPostForm(instance=instance)
+            form = FishPostForm(instance=instance)
             context= {
                 'form':form
             }
-            return render (request, 'fishupdate.html',context)
+            return render (request, 'update.html',context)
             
         
+class DeleteFishPost(generic.DeleteView):
+    model = FishPost
+    template_name = 'TIPLOGO CMS/FISH/delete.html'
+    def get_success_url(self):
+        return reverse('post-list')
+    
+    # <<<<<<<--------------------------JANB CMS POST ------------------------------------->>>>>>
+
+class tiplogojambpost(generic.CreateView):
+    template_name = 'TIPLOGO CMS/JAMB/jamb_post.html'
+    model = JambPost
+    form_class =JambPostForm
+    def get_success_url(self):
+        return reverse ('post-list')
+    
+class jambpostupdateview(generic.UpdateView):
+    template_name = 'TIPLOGO CMS/JAMB/update.html'
+    form_class = JambPostForm
+    model =  JambPost
+    def get_success_url(self):
+        return reverse('post-list')
+    def  updatefish(request , pk):
+        instance = get_object_or_404 (JambPost ,pk=pk)
+        if request.method == 'POST':
+            form = JambPostForm(request.POST, instance=instance)
+            if form.is_valid():
+                form.save()
+                return redirect ('post-list')
+        else:
+            form = JambPostForm(instance=instance)
+            context= {
+                'form':form
+            }
+            return render (request, 'update.html',context)
+
+
+class DeleteJambPost(generic.DeleteView):
+    model = JambPost
+    template_name = 'TIPLOGO CMS/JAMB/delete.html'
+    def get_success_url(self):
+        return reverse('post-list')
+     # <<<<<<<-------------------------- THE END OF CMS------------------------------------->>>>>>
+    
+class emalistviews(generic.ListView):
+    template_name = 'TIPLOGO CMS/email_list.html'
+    queryset = Subcribers.objects.all()
+    model =Subcribers
+    context_object_name = 'emails'
+    def email(request):
+        emails = Subcribers.objects.all()
+        context = {
+            'emails':emails
+        }
+        return render (request, 'TIPLOGO CMS/email_list.html',context)
 

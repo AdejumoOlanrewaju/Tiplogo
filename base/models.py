@@ -28,7 +28,27 @@ class EmailTemplate(models.Model):
 class TiplogoPost(models.Model):
     title = models.CharField(max_length=200)
     content = models.TextField()
-    images = models.ImageField(upload_to='images' ,blank=True)
+    images = models.FileField(upload_to='images/')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(db_default = datetime.now())
+
+    def __str__(self):
+        return self.title
+    
+class JambPost(models.Model):
+    title = models.CharField(max_length=200)
+    content = models.TextField()
+    images = models.FileField(upload_to='images/')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(db_default = datetime.now())
+
+    def __str__(self):
+        return self.title
+    
+class FishPost(models.Model):
+    title = models.CharField(max_length=200)
+    content = models.TextField()
+    images = models.FileField(upload_to='images/')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(db_default = datetime.now())
 

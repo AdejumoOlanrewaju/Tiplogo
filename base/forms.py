@@ -1,5 +1,5 @@
 from django import forms
-from .models import Subcribers , MailMessage ,EmailTemplate ,TiplogoPost
+from .models import Subcribers , MailMessage ,EmailTemplate ,TiplogoPost,JambPost,FishPost
 from ckeditor.fields import RichTextField
 
 class SubcribersForm(forms.ModelForm):
@@ -28,6 +28,20 @@ class ContactForm(forms.Form):
 
 
 class TiplogoPostForm(forms.ModelForm):
+    images = forms.FileField()
     class Meta:
         model = TiplogoPost
-        fields  = ['title', 'content','images']
+        fields  = ['title','images','content']
+
+class JambPostForm(forms.ModelForm):
+    images = forms.FileField()
+    class Meta:
+        model = JambPost
+        fields  = ['title','images','content']
+
+
+class FishPostForm(forms.ModelForm):
+    images = forms.FileField()
+    class Meta:
+        model = FishPost
+        fields  = ['title','images','content']
