@@ -1,6 +1,6 @@
 from django.db import models
 from datetime import datetime
-# from ckeditor.fields import RichTextField
+from ckeditor.fields import RichTextField
 
 
 class Subcribers(models.Model):
@@ -19,7 +19,7 @@ class  MailMessage(models.Model):
     
 class EmailTemplate(models.Model):
     subject = models.CharField(max_length=123)
-    # message =RichTextField()
+    message =RichTextField()
    
     
     def __str__(self):

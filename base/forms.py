@@ -1,6 +1,6 @@
 from django import forms
 from .models import Subcribers , MailMessage ,EmailTemplate ,TiplogoPost
-# from ckeditor.fields import RichTextField
+from ckeditor.fields import RichTextField
 
 class SubcribersForm(forms.ModelForm):
     class Meta:

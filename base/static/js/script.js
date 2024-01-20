@@ -31,7 +31,7 @@ window.addEventListener("scroll", () => {
     if(scrollY > 0){
         document.querySelector("nav").classList.add("active")
         // hamburgerSpan.forEach(el => el.style.backgroundColor = "black")
-       
+    
     }else{
         document.querySelector("nav").classList.remove("active")
         // hamburgerSpan.forEach(el => el.style.backgroundColor = "white")
@@ -178,8 +178,8 @@ closeMenu.addEventListener("click", () => {
 })
 
 // Script to handle testimonial scroll
+let tesCount = 0
 testimonialScrollBtn.forEach(btn => btn.addEventListener("click", ChangeTesMove))
-
 
 let moveX = 0
 function ChangeTesMove(){
@@ -188,36 +188,31 @@ function ChangeTesMove(){
         tesWidth = el.clientWidth
     })
 
-    moveX = testimonialScrollSection.scrollLeft
+    moveX = Math.ceil(testimonialScrollSection.scrollLeft)
     this.className == "next-btn" ? moveX += tesWidth : moveX -= tesWidth
     if(moveX < 0){
         moveX = 0
     }
     testimonialScrollSection.scrollLeft = moveX
-    // console.log(testimonialScrollSection.scrollLeft)
-    console.log((moveX))
     this.className == "next-btn" ? disableNextBtn(this) : disablePrevBtn(this)
 }
 
 function disableNextBtn(el){
-    console.log(el)
-    let tesCount = (testimonialScrollSection.scrollWidth - testimonialScrollSection.clientWidth)
-
-    // console.log(testimonialScrollSection.scrollWidth - testimonialScrollSection.clientWidth)
-    console.log(tesCount)
-    // console.log(moveX)
-    if(moveX == tesCount){
-        // el.disabled = "true"
-        console.log("treee")
+    document.querySelector(".testimonial-btn-container .prev-btn").disabled = false
+    tesCount = (testimonialScrollSection.scrollWidth - testimonialScrollSection.clientWidth)
+    if(moveX >= tesCount){
+        el.disabled = true
+    }else{
+        el.disabled = false
     }
 }
 
 function disablePrevBtn(el){
-console.log(el)
-// console.log(moveX)
-
-    if(testimonialScrollSection.scrollLeft == 5){
-        console.log(el)
+    document.querySelector(".testimonial-btn-container .next-btn").disabled = false
+    if(moveX == 15){
+        el.disabled = true
+    }else{
+        el.disabled = false
     }
 }
 
