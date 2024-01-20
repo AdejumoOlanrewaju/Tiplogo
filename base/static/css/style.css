@@ -775,13 +775,12 @@ header{
 }
 
 .testimonial-section .head{
-    margin-bottom : 40px;
+    margin-bottom : 20px;
 }
 
 .testimonial-scroll-section{
     max-width : 1200px;
     width : 90%;
-    height : 300px;
     margin: auto;
     display : flex;
     align-items : center;
@@ -792,6 +791,7 @@ header{
     scroll-padding : 0 10px;
     scroll-behavior: smooth;
     scrollbar-width: none;
+    /* height : 300px; */
 }
 
 .testimonial-scroll-section::-webkit-scrollbar{
@@ -800,12 +800,23 @@ header{
 
 .testimonial{
     flex : 1 0 calc(25% - 5px);
-    height : 200px;
-    background-color: var(--boxes-theme-clr);
     padding : 0px 15px;
     border-radius : 10px;
     position : relative;
     scroll-snap-align: start;
+    overflow: hidden;
+    /* height : 200px; */
+}
+
+.tes-bg{
+    position: absolute;
+    top: 50px;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--boxes-theme-clr);
+    border-radius: inherit;
+
 }
 
 .testimonial p{
@@ -814,8 +825,8 @@ header{
 
 .testimonial-words{
     color : var(--text-dark-clr-600);
-    position : absolute;
-    top : -44px;
+    /* position : absolute;
+    top : -44px; */
 }
 
 .quote-icon{
@@ -832,8 +843,8 @@ header{
     gap : 10px;
     align-items : center;
     padding : 10px 0;
-    position: absolute;
-    bottom: 0;
+    /* position: absolute;
+    bottom: 0; */
 }
 
 .client-img{
@@ -879,6 +890,20 @@ header{
 /* .testimonial-section .subhead span::after{
     background-color : #f2f2f2;
 } */
+
+footer{
+    background-color: var(--b-theme-dark-clr);
+}
+
+.footer-wrapper{
+    width : 90%;
+    max-width : 1300px;
+    margin: 0 auto;
+    display : flex;
+    align-items : start;
+    justify-content: space-between;
+    color : var(--text-clr)
+}
 
 @media(max-width : 1100px){
     nav .container{
