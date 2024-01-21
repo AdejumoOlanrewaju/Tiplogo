@@ -322,8 +322,12 @@
                     Iure doloribus earum ipsum velit amet sequi delectus, 
                     similique nobis 
                 </p>
-
-                <form class = "newsletter-input-container">
+               
+                <form method="post" class = "newsletter-input-container">
+                    {% for messages in messages %}
+                    {{messages}}
+                   {% endfor %}
+                    {% csrf_token %}
                     <input type = "text" placeholder="Enter Your Email" required name = "email"/>
                     <button type = "submit"><img alt = "send message icon" src = "/static/img/message.svg"></button>
                 </form>
