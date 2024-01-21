@@ -19,10 +19,6 @@ from django.contrib import auth
  
 # Create your views here.
 def index(request):
-
-    return render(request, 'index.html')
-
-def news(request):
     email =Subcribers.email
     if request.method == 'POST':
      form =SubcribersForm(request.POST)
@@ -30,17 +26,17 @@ def news(request):
          subcriber=form.save()
          send_thanks_mail(subcriber.email)
          messages.success(request, 'email added successfully')
-         return redirect('news')
+         return redirect('index')  
      else:
          Subcribers.objects.filter(email=email).exists()
          messages.error(request, 'email already exist')
-         return redirect('news')
+         return redirect('index')
     else:
      form =SubcribersForm()
      context ={
          'form':form
      }
-     return render (request,'news.html',context)
+     return render (request,'index.html',context)
 def send_thanks_mail(email):
     subject = 'thank you for subcribing'
     html_message =render_to_string('thank_you.html')
@@ -54,6 +50,11 @@ def send_thanks_mail(email):
         fail_silently=True
     )
     
+
+  
+
+
+   
        
         
 def mail(request):
