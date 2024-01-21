@@ -210,7 +210,7 @@ function disableNextBtn(el){
 
 function disablePrevBtn(el){
     document.querySelector(".testimonial-btn-container .next-btn").disabled = false
-    if(moveX == 15){
+    if(moveX <= 15){
         el.disabled = true
     }else{
         el.disabled = false
