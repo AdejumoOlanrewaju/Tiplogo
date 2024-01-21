@@ -1,5 +1,5 @@
 from django.contrib import admin
-from  .models import Subcribers ,MailMessage ,EmailTemplate, TiplogoPost 
+from  .models import Subcribers ,MailMessage ,EmailTemplate,JambPost,FishPost, TiplogoPost 
 from django import forms
 from django.conf import settings
 from django.core.mail import send_mail
@@ -36,4 +36,6 @@ class EmailTemplateAdmin(admin.ModelAdmin):
 admin.site.register(Subcribers)
 admin.site.register(MailMessage)
 admin.site.register(TiplogoPost)
-admin.site.register(EmailTemplate,EmailTemplateAdmin)
+admin.site.register(JambPost)
+admin.site.register(FishPost)
+admin.site.register(EmailTemplate,EmailTemplateAdmin) 
