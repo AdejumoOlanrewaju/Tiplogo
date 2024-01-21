@@ -26,7 +26,7 @@ def index(request):
          subcriber=form.save()
          send_thanks_mail(subcriber.email)
          messages.success(request, 'email added successfully')
-         return redirect('index')
+         return redirect('index')  
      else:
          Subcribers.objects.filter(email=email).exists()
          messages.error(request, 'email already exist')
