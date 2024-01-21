@@ -194,6 +194,7 @@ function ChangeTesMove(){
         moveX = 0
     }
     testimonialScrollSection.scrollLeft = moveX
+    console.log(moveX)
     this.className == "next-btn" ? disableNextBtn(this) : disablePrevBtn(this)
 }
 
