@@ -325,12 +325,12 @@
 
                
 
-
+                {% for messages in messages %}
+                    {{messages}}
+                   {% endfor %}
 
                 <form  method ='post' class = "newsletter-input-container">
-                    {% for messages in messages %}
-                    {{messages}}
-                    {% endfor %}
+                   
 
                     {% csrf_token %}
                     <input type = "text" placeholder="Enter Your Email" required name = "email"/>

@@ -305,3 +305,4 @@ class emalistviews(generic.ListView):
         }
         return render (request, 'TIPLOGO CMS/email_list.html',context)
 
+
