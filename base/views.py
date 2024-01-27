@@ -304,5 +304,8 @@ class emalistviews(generic.ListView):
             'emails':emails
         }
         return render (request, 'TIPLOGO CMS/email_list.html',context)
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> a022cfd6a9ce30a7d3fc885d49b059e01faef283
