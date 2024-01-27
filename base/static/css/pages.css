@@ -102,7 +102,7 @@ header{
 
 .info-section{
     background-color : white;
-    padding : 40px 20px;
+    padding : 60px 20px;
 }
 
 .sea-cta-head{
@@ -116,18 +116,31 @@ header{
 }
 
 .sea-cta-details{
-    max-width : 600px;
+    max-width : 500px;
     color : var(--text-dark-clr-600);
     line-height: 1.7;
 }
 
-.sea-cta-link-container a{
-    padding : 10px 15px;
 
+.sea-cta-link-container{
+    margin-top : 40px;
+}
+
+.contact-link,
+.explore-link{
+    padding : 10px 25px;
+    border-radius : 10px;
+    border : 2px solid;
 }
 
 .contact-link{
-    background-color : var(--b-theme-clr)
+    background-color : var(--b-theme-clr);
+    color : var(--text-clr);
+    border-color : transparent;
+}
+
+.explore-link{
+    border-color : var(--b-theme-clr)
 }
 
 .sea-product-text-content{
