@@ -356,7 +356,7 @@
                     </div>
                 </section>
 
-                <section id = "newsletter" class = "newsletter-section">
+                <section class = "newsletter-section">
                     <div class = "head-container">
                         <p class = "subhead"><span>NEWSLETTER</span></p>
                         <h3 class = "head">Stay Always In Touch</h3>
@@ -367,11 +367,17 @@
                         similique nobis 
                     </p>
 
-                    <form class = "newsletter-input-container">
+                
+                    {% for messages in messages %}
+                        {{messages}}
+                    {% endfor %}
+
+                    <form  method ='post' class = "newsletter-input-container">
+                        {% csrf_token %}
                         <input type = "text" placeholder="Enter Your Email" required name = "email"/>
                         <button type = "submit"><img alt = "send message icon" src = "/static/img/message.svg"></button>
                     </form>
-                </section>
+                </section>           
 
                 <section class = "testimonial-section">
                     <div class = "head-container">
