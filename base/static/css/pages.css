@@ -123,11 +123,13 @@ header{
 
 .sea-cta-link-container a{
     padding : 10px 15px;
+    
 
 }
 
 .contact-link{
-    background-color : var(--b-theme-clr)
+    background-color : var(--b-theme-clr);
+    color : var(--text-clr);
 }
 
 .sea-product-text-content{
