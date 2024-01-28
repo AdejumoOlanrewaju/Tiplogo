@@ -1,533 +1,577 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet" href = "{% static 'css/style.css'%}">
-    <script defer src = "{% static 'js/script.js' %}"></script>
-    <style>
-    </style>
-    <title>TIPLOGO</title>
-</head>
-<body>
-    <div class = "overlay"></div>
-    <section class = "page">
-        <header>
-            <nav>
-                <div class = "container">
-                    <!-- <img src = "/static/img/logo2.jpg" class = "logo"/> -->
-                    <a href = "/"><span class = "logo">TIPLOGO</span></a>
-    
-                    
-                    <div class = "hamburger">
-                        <span></span>
-                        <span></span>
-                        <span></spagn>
-                    </div>
-                    
-                    
-                    <ul class = "nav-links-parent">
-                        <li><a href = "#" class = "nav-link">HOME</a></li>
-                        <li><a href = "#" class = "nav-link">TIPLOGO CBT CENTER</a></li>
-                        <li><a href = "#" class = "nav-link">TIPLOGO LED BULBS</a></li>
-                        <li><a href = "#" class = "nav-link">TIPLOGO LOGISTICS</a></li>
-                        <li><a href = "#" class = "nav-link">TIPLOGO ICT</a></li>
-                        <li><a href = "#" class = "nav-link">TIPLOGO SEA FOODS</a></li>
-                    </ul>
-                    
-                    <a class = "subscribe-btn" href = "#">Subscribe</a>
-                    
-                </div>
-            </nav>
-            
-            <div class = "mobile-menu">
-    
-                <div class = "task-bar">
-                    <a href = "/"><span class = "logo">TIPLOGO</span></a>
-                    <div class = "close-menu">
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-    
-                <div class = "mobile-navigation">
-                    <ul class = "mobile-links-parent">
-                        <li><a href = "#" class = "nav-link">HOME</a></li>
-                        <li><a href = "#" class = "nav-link">TIPLOGO CBT CENTER</a></li>
-                        <li><a href = "#" class = "nav-link">TIPLOGO LED BULBS</a></li>
-                        <li><a href = "#" class = "nav-link">TIPLOGO LOGISTICS</a></li>
-                        <li><a href = "#" class = "nav-link">TIPLOGO ICT</a></li>
-                        <li><a href = "#" class = "nav-link">TIPLOGO SEA FOODS</a></li>
-                    </ul>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel = "stylesheet" href = "{% static 'css/style.css'%}">
+        <script defer src = "{% static 'js/script.js' %}"></script>
+        <title>TIPLOGO </title>
+    </head>
+    <body>
+        <div class = "overlay"></div>
+        <section class = "page">
+            <header>
+                <nav>
+                    <div class = "container">
+                        <!-- <img src = "/static/img/logo2.jpg" class = "logo"/> -->
+                        <a href = "/"><span class = "logo">TIPLOGO</span></a>
         
-                    <a class = "mobile-subscribe-btn" href = "news">Subscribe</a>
-                </div>
-    
+                        
+                        <div class = "hamburger">
+                            <span></span>
+                            <span></span>
+                            <span></spagn>
+                        </div>
+                        
+                        
+                        <ul class = "nav-links-parent">
+                            <li><a href = "/" class = "nav-link">HOME</a></li>
+                            <li><a href = "tiplogo-fish" class = "nav-link">TIPLOGO SEA FOODS</a></li>
+                            <li><a href = "tiplogo-cbt" class = "nav-link">TIPLOGO CBT CENTER</a></li>
+                            <li><a href = "tiplogo-led" class = "nav-link">TIPLOGO LED BULBS</a></li>
+                            <li><a href = "tiplogo-logistics" class = "nav-link">TIPLOGO LOGISTICS</a></li>
+                            <li><a href = "tiplogo-ict" class = "nav-link">TIPLOGO ICT</a></li>
+                        </ul>
+                        
+                        <a class = "subscribe-btn" href = "#newsletter">Subscribe</a>
+                        
+                    </div>
+                </nav>
                 
-            </div>
+                <div class = "mobile-menu">
+        
+                    <div class = "task-bar">
+                        <a href = "/"><span class = "logo">TIPLOGO</span></a>
+                        <div class = "close-menu">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+        
+                    <div class = "mobile-navigation">
+                        <ul class = "mobile-links-parent">
+                            <li><a href = "/" class = "nav-link">HOME</a></li>
+                            <li><a href = "tiplogo-fish" class = "nav-link">TIPLOGO SEA FOODS</a></li>
+                            <li><a href = "tiplogo-cbt" class = "nav-link">TIPLOGO CBT CENTER</a></li>
+                            <li><a href = "tiplogo-led" class = "nav-link">TIPLOGO LED BULBS</a></li>
+                            <li><a href = "tiplogo-logistics" class = "nav-link">TIPLOGO LOGISTICS</a></li>
+                            <li><a href = "tiplogo-ict" class = "nav-link">TIPLOGO ICT</a></li>
+                        </ul>
     
-            <div class = 'carousel-wrapper'>
-                <div class = 'carousel-container'>
-                    <div class = "carousel">
-                        <div class = "active carousel-item">
-                            <img src = "/static/img/seafood_1.jpg" alt = "carousel-img" />
-                            <h4>Our Clients Are Our First Priority</h4>
-                            <h2>WELCOME TO TIPLOGO 1</h2>
-                            <div class = "underline">
-                                <span></span>
-                                <span class = 'circle'>
+                        <a class = "mobile-subscribe-btn" href = "#newsletter">Subscribe</a>
+                    </div>
+        
+                    
+                </div>
+        
+                <div class = 'carousel-wrapper'>
+                    <div class = 'carousel-container'>
+                        <div class = " carousel">
+                            <div class = "active carousel-item">
+                                <img class="big" src = "/static/img/business_poster.jpg" alt = "carousel-img" />
+                                <h4>Our Clients Are Our First Priority</h4>
+                                <h2>TIPLOGO CBT SERVICES</h2>
+                                <div class = "underline">
                                     <span></span>
-                                </span>
-                                <span></span>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                Delectus quasi dolorem animi, quas consequuntur mollitia 
-                                natus aliquid inventore modi ad officia sunt 
-                                iusto deserunt ducimus, rem magni autem eligendi blanditiis.
-                            </p>
-                            <div class = "header-cta-container">
-                                <a href = "#" class = "cta-1">GET STARTED NOW</a>
-                                <a href = "#" class = "cta-2">Explore</a>
-                            </div>
-                        </div>
-    
-                        <div class = "carousel-item">
-                            <img src = "/static/img/business_poster.jpg" alt = "carousel-img" />
-                            <h4>Our Clients Are Our First Priority</h4>
-                            <h2>WELCOME TO TIPLOGO 2</h2>
-                            <div class = "underline">
-                                <span></span>
-                                <span class = 'circle'>
+                                    <span class = 'circle'>
+                                        <span></span>
+                                    </span>
                                     <span></span>
-                                </span>
-                                <span></span>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                    Delectus quasi dolorem animi, quas consequuntur mollitia 
+                                    natus aliquid inventore modi ad officia sunt 
+                                    iusto deserunt ducimus, rem magni autem eligendi blanditiis.
+                                </p>
+                                <div class = "header-cta-container">
+                                    <a href = "tiplogo-cbt" class = "cta-1">GET STARTED NOW</a>
+                                    <a href = "#services-section" class = "cta-2">EXPLORE</a>
+                                </div>
                             </div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                Delectus quasi dolorem animi, quas consequuntur mollitia 
-                                natus aliquid inventore modi ad officia sunt 
-                                iusto deserunt ducimus, rem magni autem eligendi blanditiis.
-                            </p>
-                            <div class = "header-cta-container">
-                                <a href = "#" class = "cta-1">GET STARTED NOW</a>
-                                <a href = "#" class = "cta-2">EXPLORE</a>
-                            </div>
-                        </div>
-                        <div class = "carousel-item">
-                            <img src = "/static/img/led_bulb2.jpg" alt = "carousel-img" />
-                            <h4>Our Clients Are Our First Priority</h4>
-                            <h2>WELCOME TO TIPLOGO 2</h2>
-                            <div class = "underline">
-                                <span></span>
-                                <span class = 'circle'>
+
+                            <div class = "carousel-item">
+                                <img src = "/static/img/seafood_1.jpg" alt = "carousel-img" />
+                                <h4>Our Clients Are Our First Priority</h4>
+                                <h2>TIPLOGO SEA FOOD DELIVERY</h2>
+                                <div class = "underline">
                                     <span></span>
-                                </span>
+                                    <span class = 'circle'>
+                                        <span></span>
+                                    </span>
+                                    <span></span>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                    Delectus quasi dolorem animi, quas consequuntur mollitia 
+                                    natus aliquid inventore modi ad officia sunt 
+                                    iusto deserunt ducimus, rem magni autem eligendi blanditiis.
+                                </p>
+                                <div class = "header-cta-container">
+                                    <a href = "tiplogo-fish" class = "cta-1">GET STARTED NOW</a>
+                                    <a href = "#services-section" class = "cta-2">Explore</a>
+                                </div>
+                            </div>
+
+                            <div class = "carousel-item">
+                                <img src = "/static/img/led_bulb2.jpg" alt = "carousel-img" />
+                                <h4>Our Clients Are Our First Priority</h4>
+                                <h2>TIPLOGO LED BULB SALES</h2>
+                                <div class = "underline">
+                                    <span></span>
+                                    <span class = 'circle'>
+                                        <span></span>
+                                    </span>
+                                    <span></span>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                    Delectus quasi dolorem animi, quas consequuntur mollitia 
+                                    natus aliquid inventore modi ad officia sunt 
+                                    iusto deserunt ducimus, rem magni autem eligendi blanditiis.
+                                </p>
+                                <div class = "header-cta-container">
+                                    <a href = "tiplogo-led" class = "cta-1">GET STARTED NOW</a>
+                                    <a href = "#services-section" class = "cta-2">EXPLORE</a>
+                                </div>
+                            </div>
+
+                            <div class = "carousel-item">
+                                <img src = "/static/img/led_bulb2.jpg" alt = "carousel-img" />
+                                <h4>Our Clients Are Our First Priority</h4>
+                                <h2>TIPLOGO LOGISTICS</h2>
+                                <div class = "underline">
+                                    <span></span>
+                                    <span class = 'circle'>
+                                        <span></span>
+                                    </span>
+                                    <span></span>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                    Delectus quasi dolorem animi, quas consequuntur mollitia 
+                                    natus aliquid inventore modi ad officia sunt 
+                                    iusto deserunt ducimus, rem magni autem eligendi blanditiis.
+                                </p>
+                                <div class = "header-cta-container">
+                                    <a href = "tiplogo-led" class = "cta-1">GET STARTED NOW</a>
+                                    <a href = "#services-section" class = "cta-2">EXPLORE</a>
+                                </div>
+                            </div>
+
+                            
+                            <div class = "carousel-item">
+                                <img src = "/static/img/led_bulb2.jpg" alt = "carousel-img" />
+                                <h4>Our Clients Are Our First Priority</h4>
+                                <h2>TIPLOGO ICT SALES & SERVICES</h2>
+                                <div class = "underline">
+                                    <span></span>
+                                    <span class = 'circle'>
+                                        <span></span>
+                                    </span>
+                                    <span></span>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                    Delectus quasi dolorem animi, quas consequuntur mollitia 
+                                    natus aliquid inventore modi ad officia sunt 
+                                    iusto deserunt ducimus, rem magni autem eligendi blanditiis.
+                                </p>
+                                <div class = "header-cta-container">
+                                    <a href = "tiplogo-led" class = "cta-1">GET STARTED NOW</a>
+                                    <a href = "#services-section" class = "cta-2">EXPLORE</a>
+                                </div>
+                            </div>
+        
+                            <button id = "prev" class = "prev btn">
+                                <img src = "/static/img/arrow.png" alt = "Next carousel button">
+                            </button>
+                            <button id = "next" class = "next btn">
+                                <img src = "/static/img/arrow.png" alt = "Previous carousel button">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        
+            <main>
+                <section id = "services-section" class = "services-section">
+                    <div class = "head-container">
+                        <p class = "subhead"><span>OUR SERVICES</span></p>
+                        <h3 class = "head">What Solutions We Provide</h3>
+                    </div>
+                        
+                    <div class = "service-boxes-container">
+                        <div class = "service-box">
+                            <div class = "service-logo">
                                 <span></span>
+                                <img src = "/static/img/cbt.svg" alt = ""/>
                             </div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                Delectus quasi dolorem animi, quas consequuntur mollitia 
-                                natus aliquid inventore modi ad officia sunt 
-                                iusto deserunt ducimus, rem magni autem eligendi blanditiis.
+
+                            <p class = "service-name">Jamb Services</p>
+
+                            <p class = "sub-content">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Officiis obcaecati consectetur nesciunt quo ex? 
                             </p>
-                            <div class = "header-cta-container">
-                                <a href = "/mail" class = "cta-1">GET STARTED NOW</a>
-                                <a href = "{% url 'mail' %}" class = "cta-2">EXPLORE</a>
-                            </div>
                         </div>
+
+                        <div class = "service-box">
+                            <div class = "service-logo">
+                                <span></span>
+                                <img src = "/static/img/bulb.svg" alt = ""/>
+                            </div>
+
+                            <p class = "service-name">Led Bulb Sales</p>
+
+                            <p class = "sub-content">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Officiis obcaecati consectetur nesciunt quo ex?  
+                            </p>
+                        </div>
+
+                        <div class = "service-box">
+                            <div class = "service-logo">
+                                <span></span>
+                                <img src = "/static/img/logistics.svg" alt = ""/>
+                            </div>
+
+                            <p class = "service-name">Logistics Services</p>
+
+                            <p class = "sub-content">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Officiis obcaecati consectetur nesciunt quo ex?  
+                            </p>
+                        </div>
+
+                        <div class = "service-box">
+                            <div class = "service-logo">
+                                <span></span>
+                                <img src = "/static/img/tools.svg" alt = ""/>
+                            </div>
+
+                            <p class = "service-name">ICT Equipment Sales & Services</p>
+
+                            <p class = "sub-content">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Officiis obcaecati consectetur nesciunt quo ex? 
+        
+                            </p>
+                        </div>
+
+                        <div class = "service-box">
+                            <div class = "service-logo">
+                                <span></span>
+                                <img src = "/static/img/fish.svg" alt = ""/>
+                            </div>
+
+                            <p class = "service-name">Sea Food Sales</p>
+
+                            <p class = "sub-content">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Officiis obcaecati consectetur nesciunt quo ex? 
     
-                        <button id = "prev" class = "prev btn">
-                            <img src = "/static/img/arrow.png" alt = "Next carousel button">
-                        </button>
-                        <button id = "next" class = "next btn">
-                            <img src = "/static/img/arrow.png" alt = "Previous carousel button">
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </header>
+                            </p>
+                        </div>
+                        
+                        <div class = "service-box">
+                            <div class = "service-logo">
+                                <span></span>
+                                <img src = "/static/img/cbt.svg" alt = ""/>
+                            </div>
+
+                            <p class = "service-name">Educational Services</p>
+
+                            <p class = "sub-content">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Officiis obcaecati consectetur nesciunt quo ex? 
     
-        <main>
-            <section class = "services-section">
-                <div class = "head-container">
-                    <p class = "subhead"><span>OUR SERVICES</span></p>
-                    <h3 class = "head">What Solutions We Provide</h3>
-                </div>
-                    
-                <div class = "service-boxes-container">
-                    <div class = "service-box">
-                        <div class = "service-logo">
-                            <span></span>
-                            <img src = "/static/img/cbt.svg" alt = ""/>
-                        </div>
-
-                        <p class = "service-name">Jamb Services</p>
-
-                        <p class = "sub-content">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            Officiis obcaecati consectetur nesciunt quo ex? 
-                        </p>
-                    </div>
-
-                    <div class = "service-box">
-                        <div class = "service-logo">
-                            <span></span>
-                            <img src = "/static/img/bulb.svg" alt = ""/>
-                        </div>
-
-                        <p class = "service-name">Led Bulb Sales</p>
-
-                        <p class = "sub-content">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            Officiis obcaecati consectetur nesciunt quo ex?  
-                        </p>
-                    </div>
-
-                    <div class = "service-box">
-                        <div class = "service-logo">
-                            <span></span>
-                            <img src = "/static/img/logistics.svg" alt = ""/>
-                        </div>
-
-                        <p class = "service-name">Logistics Services</p>
-
-                        <p class = "sub-content">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            Officiis obcaecati consectetur nesciunt quo ex?  
-                        </p>
-                    </div>
-
-                    <div class = "service-box">
-                        <div class = "service-logo">
-                            <span></span>
-                            <img src = "/static/img/tools.svg" alt = ""/>
-                        </div>
-
-                        <p class = "service-name">ICT Equipment Sales & Services</p>
-
-                        <p class = "sub-content">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            Officiis obcaecati consectetur nesciunt quo ex? 
-      
-                        </p>
-                    </div>
-
-                    <div class = "service-box">
-                        <div class = "service-logo">
-                            <span></span>
-                            <img src = "/static/img/fish.svg" alt = ""/>
-                        </div>
-
-                        <p class = "service-name">Sea Food Sales</p>
-
-                        <p class = "sub-content">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            Officiis obcaecati consectetur nesciunt quo ex? 
-   
-                        </p>
-                    </div>
-                    
-                    <div class = "service-box">
-                        <div class = "service-logo">
-                            <span></span>
-                            <img src = "/static/img/cbt.svg" alt = ""/>
-                        </div>
-
-                        <p class = "service-name">Educational Services</p>
-
-                        <p class = "sub-content">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            Officiis obcaecati consectetur nesciunt quo ex? 
-   
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <section class = "product-section">
-                <div class = "head-container">
-                    <p class = "subhead"><span>OUR PROJECTS</span></p>
-                    <h3 class = "head">Products We Offer</h3>
-                </div>
-
-                <div class = "products-content-container">
-                    <div class = "products-tab-container">
-                        <div class = "products-tab">
-                            <a href = "#" data-category="all" class = "tab-links">All</a>
-                            <a href = "#" data-category="bulb" class = "tab-links">Bulb</a>
-                            <a href = "#" data-category="seafood" class = "tab-links">SeaFood</a>
-                            <a href = "#" data-category="Ict" class = "tab-links">ICT Equipment</a>
-                            <div class = "tab-line"></div>
+                            </p>
                         </div>
                     </div>
+                </section>
 
-                    <div class = "products-boxes-container">
-                        <div id = "bulb" class = "product-box">
-                            <img src = "/static/img/led_bulb1.jpg" alt = "Led bulb product image">
-                            <div class = "product-text-content">
-                                <p class = "product-name">Led Bulbs</p>
-                                <p class = "product-details">Tiplogo Led bulbs Sales.</p>
+                <section class = "product-section">
+                    <div class = "head-container">
+                        <p class = "subhead"><span>OUR PROJECTS</span></p>
+                        <h3 class = "head">Products We Offer</h3>
+                    </div>
+
+                    <div class = "products-content-container">
+                        <div class = "products-tab-container">
+                            <div class = "products-tab">
+                                <a href = "#" data-category="all" class = "tab-links">All</a>
+                                <a href = "#" data-category="bulb" class = "tab-links">Bulb</a>
+                                <a href = "#" data-category="seafood" class = "tab-links">SeaFood</a>
+                                <a href = "#" data-category="Ict" class = "tab-links">ICT Equipment</a>
+                                <div class = "tab-line"></div>
                             </div>
                         </div>
 
-                        <div id = "bulb" class = "product-box">
-                            <img src = "/static/img/led_bulb2.jpg" alt = "Led bulb product image">
-                            <div class = "product-text-content">
-                                <p class = "product-name">Led Bulbs</p>
-                                <p class = "product-details">Tiplogo Led bulbs Sales.</p>
+                        <div class = "products-boxes-container">
+                            <div id = "bulb" class = "product-box">
+                                <img src = "/static/img/led_bulb1.jpg" alt = "Led bulb product image">
+                                <div class = "product-text-content">
+                                    <p class = "product-name">Led Bulbs</p>
+                                    <p class = "product-details">Tiplogo Led bulbs Sales.</p>
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div id = "seafood" class = "product-box">
-                            <img src = "/static/img/seafood_1.jpg" alt = "Led bulb product image">
-                            <div class = "product-text-content">
-                                <p class = "product-name">Sea Food(crayfish and dryfish)</p>
-                                <p class = "product-details">Sea Food Sales And Delivery</p>
-                            </div>
-                        </div>
 
-                        <div id = "bulb" class = "product-box">
-                            <img src = "/static/img/led_bulb3.jpg" alt = "Led bulb product image">
-                            <div class = "product-text-content">
-                                <p class = "product-name">Led Bulbs</p>
-                                <p class = "product-details">Tiplogo Led bulbs Sales.</p>
+                            <div id = "bulb" class = "product-box">
+                                <img src = "/static/img/led_bulb2.jpg" alt = "Led bulb product image">
+                                <div class = "product-text-content">
+                                    <p class = "product-name">Led Bulbs</p>
+                                    <p class = "product-details">Tiplogo Led bulbs Sales.</p>
+                                </div>
                             </div>
-                        </div>
-
-                        <div id = "seafood" class = "product-box">
-                            <img src = "/static/img/seafood_3.jpg" alt = "Led bulb product image">
-                            <div class = "product-text-content">
-                                <p class = "product-name">Sea Food(crayfish and dryfish)</p>
-                                <p class = "product-details">Sea Food Sales And Delivery</p>
+                            
+                            <div id = "seafood" class = "product-box">
+                                <img src = "/static/img/seafood_1.jpg" alt = "Led bulb product image">
+                                <div class = "product-text-content">
+                                    <p class = "product-name">Sea Food(crayfish and dryfish)</p>
+                                    <p class = "product-details">Sea Food Sales And Delivery</p>
+                                </div>
                             </div>
-                        </div>
 
-                        <div id = "seafood" class = "product-box">
-                            <img src = "/static/img/led_bulb_bulk.jpg" alt = "Sea Food product image">
-                            <div class = "product-text-content">
-                                <p class = "product-name">Sea Food(crayfish and dryfish)</p>
-                                <p class = "product-details">Sea Food Sales And Delivery</p>
+                            <div id = "bulb" class = "product-box">
+                                <img src = "/static/img/led_bulb3.jpg" alt = "Led bulb product image">
+                                <div class = "product-text-content">
+                                    <p class = "product-name">Led Bulbs</p>
+                                    <p class = "product-details">Tiplogo Led bulbs Sales.</p>
+                                </div>
+                            </div>
+
+                            <div id = "seafood" class = "product-box">
+                                <img src = "/static/img/seafood_3.jpg" alt = "Led bulb product image">
+                                <div class = "product-text-content">
+                                    <p class = "product-name">Sea Food(crayfish and dryfish)</p>
+                                    <p class = "product-details">Sea Food Sales And Delivery</p>
+                                </div>
+                            </div>
+
+                            <div id = "seafood" class = "product-box">
+                                <img src = "/static/img/led_bulb_bulk.jpg" alt = "Sea Food product image">
+                                <div class = "product-text-content">
+                                    <p class = "product-name">Sea Food(crayfish and dryfish)</p>
+                                    <p class = "product-details">Sea Food Sales And Delivery</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <section class = "newsletter-section">
-                <div class = "head-container">
-                    <p class = "subhead"><span>NEWSLETTER</span></p>
-                    <h3 class = "head">Stay Always In Touch</h3>
-                </div>
-
-                <p class = "newsletter-section-details">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Iure doloribus earum ipsum velit amet sequi delectus, 
-                    similique nobis 
-                </p>
-
-                <form class = "newsletter-input-container">
-                    <input type = "text" placeholder="Enter Your Email" required name = "email"/>
-                    <button type = "submit"><img alt = "send message icon" src = "/static/img/message.svg"></button>
-                </form>
-            </section>
-
-            <section class = "testimonial-section">
-                <div class = "head-container">
-                    <p class = "subhead"><span>Testimonial</span></p>
-                    <h3 class = "head">What Our Clients Say </h3>
-                </div>
-
-                <div class = "testimonial-scroll-section">
-                    <div class = "testimonial">
-                        <p class = "testimonial-words">
-                            <img class = "quote-icon" src = "/static/img/quote.svg" alt = " icon for quote on the testimonial words">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                            Cumque tempore numquam rerum provident similique quidem at.
-                        </p>
-                        
-                        <div class = "client-info">
-                            <img class = "client-img" src = "/static/img/pic-2.jpg" alt = "Client picture"/>
-                            <div class = "info-text">
-                                <p class = "client-name">Client Name</p>
-                                <p class = "client-profession">Profession</p>
-                            </div>
-                        </div>
-
-                        <span class = "tes-bg"></span>
-                    </div>
-     
-                    <div class = "testimonial">
-                        <p class = "testimonial-words">
-                            <img class = "quote-icon" src = "/static/img/quote.svg" alt = " icon for quote on the testimonial words">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                            Cumque tempore numquam rerum provident similique quidem at.
-                        </p>
-                        
-                        <div class = "client-info">
-                            <img class = "client-img" src = "/static/img/pic-2.jpg" alt = "Client picture"/>
-                            <div class = "info-text">
-                                <p class = "client-name">Client Name</p>
-                                <p class = "client-profession">Profession</p>
-                            </div>
-                        </div>
-
-                        <span class = "tes-bg"></span>
-                    </div>
- 
-                    <div class = "testimonial">
-                        <p class = "testimonial-words">
-                            <img class = "quote-icon" src = "/static/img/quote.svg" alt = " icon for quote on the testimonial words">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                            Cumque tempore numquam rerum provident similique quidem at.
-                        </p>
-                        
-                        <div class = "client-info">
-                            <img class = "client-img" src = "/static/img/pic-2.jpg" alt = "Client picture"/>
-                            <div class = "info-text">
-                                <p class = "client-name">Client Name</p>
-                                <p class = "client-profession">Profession</p>
-                            </div>
-                        </div>
-
-                        <span class = "tes-bg"></span>
+                <section id = "newsletter" class = "newsletter-section">
+                    <div class = "head-container">
+                        <p class = "subhead"><span>NEWSLETTER</span></p>
+                        <h3 class = "head">Stay Always In Touch</h3>
                     </div>
 
-                    <div class = "testimonial">
-                        <p class = "testimonial-words">
-                            <img class = "quote-icon" src = "/static/img/quote.svg" alt = " icon for quote on the testimonial words">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                            Cumque tempore numquam rerum provident similique quidem at.
-                        </p>
-                        
-                        <div class = "client-info">
-                            <img class = "client-img" src = "/static/img/pic-2.jpg" alt = "Client picture"/>
-                            <div class = "info-text">
-                                <p class = "client-name">Client Name</p>
-                                <p class = "client-profession">Profession</p>
-                            </div>
-                        </div>
+                    <p class = "newsletter-section-details">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Iure doloribus earum ipsum velit amet sequi delectus, 
+                        similique nobis 
+                    </p>
 
-                        <span class = "tes-bg"></span>
-                    </div>
-
-                    <div class = "testimonial">
-                        <p class = "testimonial-words">
-                            <img class = "quote-icon" src = "/static/img/quote.svg" alt = " icon for quote on the testimonial words">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                            Cumque tempore numquam rerum provident similique quidem at.
-                        </p>
-                        
-                        <div class = "client-info">
-                            <img class = "client-img" src = "/static/img/pic-2.jpg" alt = "Client picture"/>
-                            <div class = "info-text">
-                                <p class = "client-name">Client Name</p>
-                                <p class = "client-profession">Profession</p>
-                            </div>
-                        </div>
-
-                        <span class = "tes-bg"></span>
-                    </div>
-
-                    <div class = "testimonial">
-                        <p class = "testimonial-words">
-                            <img class = "quote-icon" src = "/static/img/quote.svg" alt = " icon for quote on the testimonial words">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                            Cumque tempore numquam rerum provident similique quidem at.
-                        </p>
-                        
-                        <div class = "client-info">
-                            <img class = "client-img" src = "/static/img/pic-2.jpg" alt = "Client picture"/>
-                            <div class = "info-text">
-                                <p class = "client-name">Client Name</p>
-                                <p class = "client-profession">Profession</p>
-                            </div>
-                        </div>
-
-                        <span class = "tes-bg"></span>
-                    </div>
-                    
-                </div>
-
-                <div class = "testimonial-btn-container">
-                    <button class = "prev-btn">&larr;</button>
-                    <button class = "next-btn">&rarr;</button>
-                </div>
-            </section>
-        </main>
-
-        <footer>
-            <div class = "footer-wrapper">
-                <div class = "address-box">
-                    <h3 class = "box-head">
-                        ADDRESS
-                        <span class = "box-head-underline"></span>
-                    </h3>
-    
-                    <ul class = "address-list">
-                        <li class = "address-details">
-                            <img class = "address-img" alt = "" src = "/static/img/location.svg">
-                            <p class = "address-text">12 Ali Balogun Street, Okitipupa</p>
-                        </li>
-
-                        <li class = "phone-details">
-                            <img class = "address-img" alt = "" src = "/static/img/phone.svg">
-                            <p class = "address-text">+234 806 959 8685</p>
-                        </li>
-
-                        
-                        <li class = "mail-details">
-                            <img class = "address-img" alt = "" src = "/static/img/mail.svg">
-                            <p class = "address-text">tiplogo1@gmail.com</p>
-                        </li>
-
-
-                    </ul>
-    
-                    <div class = "social-media-box">
-                        <span class= "social-media-span"><a href = ""><img src = "/static/img/facebook.svg" alt = ""></a></span>
-                        <span class= "social-media-span"><a href = ""><img src = "/static/img/instagram.svg" alt = ""></a></span>
-                        <span class= "social-media-span"><a href = ""><img src = "/static/img/linkedin.svg" alt = ""></a></span> 
-                        <span class= "social-media-span"><a href = "https://wa.me/+234 806 959 8685"><img src = "/static/img/whatsapp.svg" alt = ""></a></span>
-                        
-                    </div>
-                </div>
-    
-                <div class = "quick-link-box">
-                    <h3 class = "box-head">
-                        QUICK-LINK
-                        <span class = "box-head-underline"></span>
-                    </h3>
-    
-                    <div class = "quick-links-container">
-                        <a href = "">About Us</a>
-                        <a href = "">Contact Us</a>
-                        <a href = "">Privacy Policy</a>
-                        <a href = "">Terms & Conditions</a>
-                    </div>
-                </div>
-    
-                <div class = "newsletter-box">
-                    <h3 class = "box-head">
-                        NEWSLETTER
-                        <span class = "box-head-underline"></span>
-                    </h3>
-    
-                    <p class = "newsletter-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat porro at, earum deleniti provident vitae</p>
-                    
-                    
                     <form class = "newsletter-input-container">
                         <input type = "text" placeholder="Enter Your Email" required name = "email"/>
                         <button type = "submit"><img alt = "send message icon" src = "/static/img/message.svg"></button>
                     </form>
-                </div>
-            </div>
-            <div class = "copyright-container">
-                <div class = "site-details">
-                    <p class = "site-name">Tiplogo.com, All Right Reserved. Designed by <a class = "creator-link" href = "">LB Codex</a> </p>
-                    <p class = "site-distribution"></p>
-                </div>
+                </section>
 
-                <div class = "copyright-links-container">
-                    <a href = "">Home</a>
-                    <a href = "">Subscribe</a>
-                    <a href = "">Products</a>
-                    <a href = "">Services</a>
-                </div>
-            </div>
-        </footer>
-    </section>
+                <section class = "testimonial-section">
+                    <div class = "head-container">
+                        <p class = "subhead"><span>Testimonial</span></p>
+                        <h3 class = "head">What Our Clients Say </h3>
+                    </div>
 
-</body>
+                    <div class = "testimonial-scroll-section">
+                        <div class = "testimonial">
+                            <p class = "testimonial-words">
+                                <img class = "quote-icon" src = "/static/img/quote.svg" alt = " icon for quote on the testimonial words">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                                Cumque tempore numquam rerum provident similique quidem at.
+                            </p>
+                            
+                            <div class = "client-info">
+                                <img class = "client-img" src = "/static/img/pic-2.jpg" alt = "Client picture"/>
+                                <div class = "info-text">
+                                    <p class = "client-name">Client Name</p>
+                                    <p class = "client-profession">Profession</p>
+                                </div>
+                            </div>
+
+                            <span class = "tes-bg"></span>
+                        </div>
+        
+                        <div class = "testimonial">
+                            <p class = "testimonial-words">
+                                <img class = "quote-icon" src = "/static/img/quote.svg" alt = " icon for quote on the testimonial words">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                                Cumque tempore numquam rerum provident similique quidem at.
+                            </p>
+                            
+                            <div class = "client-info">
+                                <img class = "client-img" src = "/static/img/pic-2.jpg" alt = "Client picture"/>
+                                <div class = "info-text">
+                                    <p class = "client-name">Client Name</p>
+                                    <p class = "client-profession">Profession</p>
+                                </div>
+                            </div>
+
+                            <span class = "tes-bg"></span>
+                        </div>
+    
+                        <div class = "testimonial">
+                            <p class = "testimonial-words">
+                                <img class = "quote-icon" src = "/static/img/quote.svg" alt = " icon for quote on the testimonial words">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                                Cumque tempore numquam rerum provident similique quidem at.
+                            </p>
+                            
+                            <div class = "client-info">
+                                <img class = "client-img" src = "/static/img/pic-2.jpg" alt = "Client picture"/>
+                                <div class = "info-text">
+                                    <p class = "client-name">Client Name</p>
+                                    <p class = "client-profession">Profession</p>
+                                </div>
+                            </div>
+
+                            <span class = "tes-bg"></span>
+                        </div>
+
+                        <div class = "testimonial">
+                            <p class = "testimonial-words">
+                                <img class = "quote-icon" src = "/static/img/quote.svg" alt = " icon for quote on the testimonial words">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                                Cumque tempore numquam rerum provident similique quidem at.
+                            </p>
+                            
+                            <div class = "client-info">
+                                <img class = "client-img" src = "/static/img/pic-2.jpg" alt = "Client picture"/>
+                                <div class = "info-text">
+                                    <p class = "client-name">Client Name</p>
+                                    <p class = "client-profession">Profession</p>
+                                </div>
+                            </div>
+
+                            <span class = "tes-bg"></span>
+                        </div>
+
+                        <div class = "testimonial">
+                            <p class = "testimonial-words">
+                                <img class = "quote-icon" src = "/static/img/quote.svg" alt = " icon for quote on the testimonial words">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                                Cumque tempore numquam rerum provident similique quidem at.
+                            </p>
+                            
+                            <div class = "client-info">
+                                <img class = "client-img" src = "/static/img/pic-2.jpg" alt = "Client picture"/>
+                                <div class = "info-text">
+                                    <p class = "client-name">Client Name</p>
+                                    <p class = "client-profession">Profession</p>
+                                </div>
+                            </div>
+
+                            <span class = "tes-bg"></span>
+                        </div>
+
+                        <div class = "testimonial">
+                            <p class = "testimonial-words">
+                                <img class = "quote-icon" src = "/static/img/quote.svg" alt = " icon for quote on the testimonial words">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                                Cumque tempore numquam rerum provident similique quidem at.
+                            </p>
+                            
+                            <div class = "client-info">
+                                <img class = "client-img" src = "/static/img/pic-2.jpg" alt = "Client picture"/>
+                                <div class = "info-text">
+                                    <p class = "client-name">Client Name</p>
+                                    <p class = "client-profession">Profession</p>
+                                </div>
+                            </div>
+
+                            <span class = "tes-bg"></span>
+                        </div>
+                        
+                    </div>
+
+                    <div class = "testimonial-btn-container">
+                        <button class = "prev-btn">&larr;</button>
+                        <button class = "next-btn">&rarr;</button>
+                    </div>
+                </section>
+            </main>
+
+            <footer>
+                <div class = "footer-wrapper">
+                    <div class = "address-box">
+                        <h3 class = "box-head">
+                            ADDRESS
+                            <span class = "box-head-underline"></span>
+                        </h3>
+        
+                        <ul class = "address-list">
+                            <li class = "address-details">
+                                <img class = "address-img" alt = "" src = "/static/img/location.svg">
+                                <p class = "address-text">12 Ali Balogun Street, Okitipupa</p>
+                            </li>
+
+                            <li class = "phone-details">
+                                <img class = "address-img" alt = "" src = "/static/img/phone.svg">
+                                <p class = "address-text">+234 806 959 8685</p>
+                            </li>
+
+                            
+                            <li class = "mail-details">
+                                <img class = "address-img" alt = "" src = "/static/img/mail.svg">
+                                <p class = "address-text">tiplogo1@gmail.com</p>
+                            </li>
+
+
+                        </ul>
+        
+                        <div class = "social-media-box">
+                            <span class= "social-media-span"><a href = ""><img src = "/static/img/facebook.svg" alt = ""></a></span>
+                            <span class= "social-media-span"><a href = ""><img src = "/static/img/instagram.svg" alt = ""></a></span>
+                            <span class= "social-media-span"><a href = ""><img src = "/static/img/linkedin.svg" alt = ""></a></span> 
+                            <span class= "social-media-span"><a href = "https://wa.me/+234 806 959 8685"><img src = "/static/img/whatsapp.svg" alt = ""></a></span>
+                            
+                        </div>
+                    </div>
+        
+                    <div class = "quick-link-box">
+                        <h3 class = "box-head">
+                            QUICK-LINK
+                            <span class = "box-head-underline"></span>
+                        </h3>
+        
+                        <div class = "quick-links-container">
+                            <a href = "">About Us</a>
+                            <a href = "">Contact Us</a>
+                            <a href = "">Privacy Policy</a>
+                            <a href = "">Terms & Conditions</a>
+                        </div>
+                    </div>
+        
+                    <div class = "newsletter-box">
+                        <h3 class = "box-head">
+                            NEWSLETTER
+                            <span class = "box-head-underline"></span>
+                        </h3>
+        
+                        <p class = "newsletter-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat porro at, earum deleniti provident vitae</p>
+                        
+                        
+                        <form class = "newsletter-input-container">
+                            <input type = "text" placeholder="Enter Your Email" required name = "email"/>
+                            <button type = "submit"><img alt = "send message icon" src = "/static/img/message.svg"></button>
+                        </form>
+                    </div>
+                </div>
+                <div class = "copyright-container">
+                    <div class = "site-details">
+                        <p class = "site-name">Tiplogo.com, All Right Reserved. Designed by <a class = "creator-link" href = "">LB Codex</a> </p>
+                        <p class = "site-distribution"></p>
+                    </div>
+
+                    <div class = "copyright-links-container">
+                        <a href = "">Home</a>
+                        <a href = "">Subscribe</a>
+                        <a href = "">Products</a>
+                        <a href = "">Services</a>
+                    </div>
+                </div>
+            </footer>
+        </section>
+
+    </body>
 </html>

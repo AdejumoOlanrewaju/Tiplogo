@@ -163,6 +163,7 @@ carouselContainer.addEventListener("mouseleave", () => {
     // autoSlide()
 })
 
+// Script for handling responsive navigation
 hamburger.addEventListener("click", () => {
     mobileMenu.classList.add("open")
     overlay.style.display = "block"
@@ -173,7 +174,6 @@ closeMenu.addEventListener("click", () => {
     mobileMenu.classList.remove("open")
     overlay.style.display = "none"
     // document.body.style.overflowY = "auto"
-
 
 })
 
