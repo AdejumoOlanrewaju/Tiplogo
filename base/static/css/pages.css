@@ -102,7 +102,15 @@ header{
 
 .info-section{
     background-color : white;
-    padding : 60px 20px;
+    display : flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    flex-wrap : wrap;
+}
+
+.sea-cta-details-wrapper{
+    padding : 60px 0px 60px 30px;
+
 }
 
 .sea-cta-head{
@@ -127,7 +135,7 @@ header{
 
 .contact-link,
 .explore-link{
-    padding : 10px 25px;
+    padding : 10px 35px;
     border-radius : 10px;
     border : 2px solid;
 }
@@ -135,11 +143,42 @@ header{
 .contact-link{
     background-color : var(--b-theme-clr);
     color : var(--text-clr);
-    border-color : transparent;
+    border-color : transparent;  
+    transition: background-color .5s ease;
 }
 
 .explore-link{
-    border-color : var(--b-theme-clr)
+    border-color : var(--b-theme-clr);
+    margin-left : 20px;
+    color : var(--text-dark-clr-800);
+    transition: background-color .5s ease, color .3s ease;
+}
+
+.contact-link:hover{
+    background-color: var(--b-theme-dark-clr);
+}
+
+.explore-link:hover{
+    background-color: var(--b-theme-clr);
+    color : var(--text-clr)
+}
+
+.cta-banner-container{
+    width : 40%;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-banner-img{
+    width: 850px;
+    height: 350px;
+    position: absolute;
+    border-top-left-radius: 200px;
+    border-bottom-left-radius: 200px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -20%;
+    object-fit: cover;
 }
 
 .sea-product-text-content{
@@ -159,6 +198,8 @@ header{
     background-color : var(--b-theme-mid-clr)
 
 }
+
+
 
 footer{
     background-color: var(--b-theme-dark-clr);
