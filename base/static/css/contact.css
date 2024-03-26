@@ -1,0 +1,62 @@
+@import url("pages.css");
+
+nav{
+    background : white;
+}
+
+.contact-page a.nav-link{
+    color  : var(--b-theme-clr)
+}
+
+.contact-page a.nav-link::after{
+    background-color : var(--b-theme-clr)
+}
+
+.contact-page header{
+    height : 80px;
+    background-color: var(--text-clr);
+}
+
+.contact-page .hamburger span{
+    background-color : black;
+}
+
+.contact-wrapper{
+    display : flex;
+    height : calc(100vh - 78px);
+}
+
+.contact-banner-container,
+.contact-form-container{
+    width : 50%;
+}
+
+.contact-banner-container{
+    /* background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%); */
+    background-image: linear-gradient(45deg, #4481eb 0%, #04befe 100%);
+    /* background-color : rgba(0,0,0,.8); */
+    /* background-blend-mode : darken; */
+    background-size : cover;
+    background-position : center;
+    display : flex;
+    align-items: center;
+}
+
+.contact-banner-head{
+    /* margin: 0; */
+    font-size : clamp(2rem, 5.5vw, 3rem);
+    color : rgba(255,255,255,.8);
+    width : 80%;
+    margin: auto;
+}
+
+.contact-form-container{
+    padding : 20px;
+    background : #ebefef;
+}
+
+.contact-form-head{
+    font-size : clamp(2.5rem, 3.5vw, 1.7rem);
+    margin-bottom : 30px;
+    text-align: center;
+}
