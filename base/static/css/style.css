@@ -1060,15 +1060,25 @@ footer{
     display : flex;
     align-items : center;
     gap : 10px;
+    transition : color 1s ease;
     /* position: relative; */
 }
 
 .quick-links-container a::before{
     content : url('/static/img/arrow.svg');
     height : 25px;
-    width : 25px
+    width : 25px;
+    transition : transform 1s ease;
     /* position : absolute; */
      
+}
+
+.quick-links-container a:hover{
+    color : white;
+}
+
+.quick-links-container a:hover::before{
+    transform : translateX(10px);
 }
 
 .newsletter-box{
