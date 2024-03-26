@@ -197,13 +197,15 @@ header{
 
 .sea.newsletter-section,
 .bulb.newsletter-section,
-.ict.newsletter-section{
+.ict.newsletter-section,
+.logistics.newsletter-section{
     background-color : var(--b-theme-mid-clr)
 }
 
 .sea.newsletter-section .subhead span,
 .bulb.newsletter-section .subhead span,
-.ict.newsletter-section .subhead span{
+.ict.newsletter-section .subhead span,
+.logistics.newsletter-section .subhead span{
     background-color : var(--b-theme-mid-clr)
 
 }

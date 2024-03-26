@@ -70,7 +70,7 @@
                 <div class = 'banner-container'>
                     <div class = "banner">
                         <div class = "banner-content">
-                            <img src = "/static/img/business_poster.jpg" alt = "carousel-img" />
+                            <img src = "/static/img/construction-site.jpg" alt = "carousel-img" />
                             <h4>Our Clients Are Our First Priority</h4>
                             <h2>TIPLOGO LOGISTICS</h2>
                             <div class = "underline">
@@ -97,27 +97,51 @@
 
         <main>
             <section class = "banner-section">
-                
+
+                <div class = "banner-img-wrapper">
+                    <div class = "banner-img-container">
+                        <img src="/static/img/logistics_1.jpg" alt="image banner of the logistics page">
+                    </div>
+                </div>
+
                 <div class = "banner-text-content">
-                    <p>Let Us Handle The Transportation</p>
-                    <h2>
-                        <span>TIPLOGO LOGISTICS</span>
+                    <p class = "sub-text">Let Us Handle The Transportation</p>
+                    <h2 class = "main-text">
+                        TIPLOGO LOGISTICS
                     </h2>
-                    <p>
+                    <p class = "details-text">
                         At Tiplogo Logistics it is our goal to handle the logistics needs of our customers, 
                         by providing an effective and efficient service
                         that we hope to align with their needs and meet up with their requirements. We can't wait to work with you also. 
                     </p>
                 </div>
 
-                <div class = "banner-img-wrapper">
-                    <div class = "banner-img-container">
-                        <img src="/static/img/logistics_1.jpg" alt="image banner of the logistics page">
-                        <img src="/static/img/logistics_2.jpg" alt="image banner of the logistics page">
-                    </div>
-                </div>
 
             </section>
+
+           
+            <section id = "newsletter" class = "logistics newsletter-section">
+                <div class = "head-container">
+                    <p class = "subhead"><span>NEWSLETTER</span></p>
+                    <h3 class = "head">Stay Always In Touch</h3>
+                </div>
+
+                <p class = "newsletter-section-details">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Iure doloribus earum ipsum velit amet sequi delectus, 
+                    similique nobis 
+                </p>
+
+            
+                {% for messages in messages %}
+                    {{messages}}
+                {% endfor %}
+
+                <form  method ='post' class = "newsletter-input-container">
+                    {% csrf_token %}
+                    <input type = "text" placeholder="Enter Your Email" required name = "email"/>
+                    <button type = "submit"><img alt = "send message icon" src = "/static/img/message.svg"></button>
+                </form>
+            </section>  
         </main>
         
         <footer>
