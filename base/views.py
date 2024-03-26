@@ -47,7 +47,7 @@ def send_thanks_mail(email):
         settings.DEFAULT_FROM_EMAIL,
         [email],
         html_message=html_message,
-        fail_silently=True
+        fail_silently=False
     )
     
 
@@ -264,6 +264,7 @@ class tiplogojambpost(generic.CreateView):
     form_class =JambPostForm
     def get_success_url(self):
         return reverse ('post-list')
+    
     
 class jambpostupdateview(generic.UpdateView):
     template_name = 'TIPLOGO CMS/JAMB/update.html'

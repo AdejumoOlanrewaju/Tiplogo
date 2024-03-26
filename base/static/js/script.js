@@ -217,6 +217,12 @@ function disablePrevBtn(el){
     }
 }
 
+function animFunc(){
+    let options = {
+        
+    }
+}
+
 // for(let [index, link] of tabLinks.entries()){
 //     console.log(index, link)
 // }
