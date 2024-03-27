@@ -1,4 +1,5 @@
-let overlay = document.querySelector(".overlay")
+
+
 let nextBtn = document.querySelector(".next.btn")
 let prevBtn = document.querySelector(".prev.btn")
 let carouselContainer = document.querySelector(".carousel-container")
@@ -11,6 +12,7 @@ let closeMenu = document.querySelector(".close-menu")
 let tabLinks = document.querySelectorAll(".tab-links")
 let tabLine = document.querySelector(".tab-line")
 let productBoxes = document.querySelectorAll(".product-box")
+let serviceBox = document.querySelectorAll(".service-box")
 let testimonialScrollSection = document.querySelector(".testimonial-scroll-section")
 let testimonialScrollBtn = document.querySelectorAll(".testimonial-btn-container button")
 let testimonial = document.querySelectorAll(".testimonial")
@@ -60,29 +62,33 @@ function animateTabline(e, link){
 function categorizeProducts(link){
     if(link.dataset.category == "all"){
         productBoxes.forEach(el => {
-            el.style.display = "block"
             el.classList.remove("hide")
-            el.style.width = '300px'
-            el.style.maxHeight = '450px'
+            setTimeout(() => {
+                el.style.display = "block" 
+                el.style.width = '300px'
+                el.style.maxHeight = '450px'
+                el.classList.add("show")
+            }, 500)
         })
 
     }else{
         productBoxes.forEach(el => {
+            el.classList.remove("show")
             el.classList.add("hide")
             setTimeout(() => {
                 el.style.width = 0
                 el.style.maxHeight = 0
                 el.style.display = "none"
-            }, 500)
+            }, 50)
         })
 
         document.querySelectorAll(`#${link.dataset.category}`).forEach(el => {
-            el.classList.remove("hide")
             setTimeout(() => {
                 el.style.display = "block"
+                el.classList.remove("hide")
                 el.style.width = '300px'
                 el.style.maxHeight = '450px'
-
+                el.classList.add("show")
             }, 500)
         })
 
@@ -99,7 +105,7 @@ function nextImage(){
         counter++
     }
 
-    console.log(counter)
+    // console.log(counter)
     carouselItems[counter].style.animation = "next2 .5s ease forwards"
 }
 
@@ -217,12 +223,32 @@ function disablePrevBtn(el){
     }
 }
 
-function animFunc(){
+function handleAnim(elem){
     let options = {
+        root : null,
+        rootMargin : '0px',
+        threshold : 0.7
         
     }
+
+    function observerCallback(entries, observer){
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                console.log(entry.target + "is seen")
+                entry.target.classList.add("addAnim")
+            }
+        })
+    }
+
+    let observer = new IntersectionObserver(observerCallback, options)
+    elem.forEach(el => {
+        observer.observe(el)
+
+    })
 }
 
+handleAnim(testimonial)
+handleAnim(serviceBox)
 // for(let [index, link] of tabLinks.entries()){
 //     console.log(index, link)
 // }

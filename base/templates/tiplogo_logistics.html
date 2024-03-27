@@ -7,10 +7,88 @@
     <link rel = "stylesheet" href = "{% static 'css/logistics.css'%}">
     <title>TIPLOGO LOGISTICS</title>
     <script defer src = "{% static 'js/pages.js'%}"></script>
+    <style>
+        .log_overlay{
+            position : fixed;
+            inset : 0;
+            width : 100%;
+            height : 100%;
+            background-color : #efefef;
+            display : flex;
+            align-items : center;
+            justify-content : center;
+            z-index : 999;
+        }
 
+        .loader-container{
+            padding : 35px 30px 0px;
+            background : linear-gradient(45deg,blue, red);
+            border-radius : 30px;
+        }
+
+        .loader{
+            max-width : 400px;
+            width : 100%;
+            margin : auto;
+        }
+
+        .loader-text{
+            stroke : black;
+            stroke-width : 3;
+            font-size : 4.5rem;
+            fill : transparent;
+            animation : anim 4s ease infinite alternate;
+        }
+
+        @keyframes anim{
+            0%{
+                fill : transparent;
+                stroke : rgba(255,255,255,.8);
+                stroke-width : 3;
+                stroke-dashoffset: 25%;
+                stroke-dasharray: 0 32%;
+            }
+
+            50%{
+                fill : transparent;
+                stroke : rgba(255,255,255,.8);;
+                stroke-width : 3;
+            }
+
+            100%{
+                fill : rgba(255,255,255,.8);;
+                stroke : rgba(255,255,255,.8);;
+                stroke-width : 0;
+                stroke-dashoffset: -25%;
+                stroke-dasharray : 32% 0;
+            }
+        }
+
+        .log_overlay.hide{
+            animation : hideOverlay 1s ease forwards;
+        }
+
+        @keyframes hideOverlay{
+            0%{
+                top : 0;
+            }
+
+            100%{
+                top : -100%;
+                visibility : hidden;
+            }
+        }
+        
+    </style>
 </head>
 <body>
-    <div class = "overlay"></div>
+    <div class = "log_overlay">
+        <div class = "loader-container">
+            <svg viewbox = "0 0 400 100" class = "loader">
+                <text x = "50%" y = "50%" dy = ".3rem" text-anchor = "middle" class = "loader-text">TIPLOGO</text>
+            </svg>
+        </div>
+    </div>
     <section class = "page">
         <header>
             <nav>
@@ -70,7 +148,7 @@
                 <div class = 'banner-container'>
                     <div class = "banner">
                         <div class = "banner-content">
-                            <img src = "/static/img/business_poster.jpg" alt = "carousel-img" />
+                            <img src = "/static/img/construction-site.jpg" alt = "carousel-img" />
                             <h4>Our Clients Are Our First Priority</h4>
                             <h2>TIPLOGO LOGISTICS</h2>
                             <div class = "underline">
@@ -95,7 +173,54 @@
 
         </header>
 
-        <main></main>
+        <main>
+            <section class = "banner-section">
+
+                <div class = "banner-img-wrapper">
+                    <div class = "banner-img-container">
+                        <img src="/static/img/logistics_1.jpg" alt="image banner of the logistics page">
+                    </div>
+                </div>
+
+                <div class = "banner-text-content">
+                    <p class = "sub-text">Let Us Handle The Transportation</p>
+                    <h2 class = "main-text">
+                        TIPLOGO LOGISTICS
+                    </h2>
+                    <p class = "details-text">
+                        At Tiplogo Logistics it is our goal to handle the logistics needs of our customers, 
+                        by providing an effective and efficient service
+                        that we hope to align with their needs and meet up with their requirements. We can't wait to work with you also. 
+                    </p>
+                </div>
+
+
+            </section>
+
+           
+            <section id = "newsletter" class = "logistics newsletter-section">
+                <div class = "head-container">
+                    <p class = "subhead"><span>NEWSLETTER</span></p>
+                    <h3 class = "head">Stay Always In Touch</h3>
+                </div>
+
+                <p class = "newsletter-section-details">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Iure doloribus earum ipsum velit amet sequi delectus, 
+                    similique nobis 
+                </p>
+
+            
+                {% for messages in messages %}
+                    {{messages}}
+                {% endfor %}
+
+                <form  method ='post' class = "newsletter-input-container">
+                    {% csrf_token %}
+                    <input type = "text" placeholder="Enter Your Email" required name = "email"/>
+                    <button type = "submit"><img alt = "send message icon" src = "/static/img/message.svg"></button>
+                </form>
+            </section>  
+        </main>
         
         <footer>
             <div class = "footer-wrapper">
@@ -178,5 +303,17 @@
             </div>
         </footer>
     </section>
+
+    <script>
+        let page = document.querySelector(".page")
+        let logOverlay = document.querySelector(".log_overlay")
+        window.addEventListener("load", () => {
+            // page.classList.add('visible')
+            setTimeout(() => {
+                logOverlay.classList.add("hide")
+            }, 4000)
+            console.log("hide")
+        })
+    </script>
 </body>
 </html>

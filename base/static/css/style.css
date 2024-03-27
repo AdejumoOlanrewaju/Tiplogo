@@ -17,12 +17,15 @@ html{
     --light-border-clr : rgba(255,255,255,.1);
     --light-border-clr-200 : rgba(255,255,255,.2);
     --dark-border-clr : rgba(0,0,0,.05);
-    --dark-border-clr-100 : rgba(0,0,0,.1);
     --dark-border-clr-200: rgba(0,0,0,.2);
+    --dark-border-clr-300 : rgba(0,0,0,.3);
+    --dark-border-clr-400: rgba(0,0,0,.4);
     --b-theme-clr : rgb(4, 115, 241);
     --b-theme-dark-clr : rgb(17, 61, 111);
     --b-theme-mid-clr : rgb(11, 83, 164);
-    --boxes-theme-clr : rgb(101 176 255 / 9%)
+    --boxes-theme-clr : rgb(43 140 241 / 17%);
+    --translate_down : -40px;
+
 }   
 
 body {
@@ -57,6 +60,11 @@ ul{
 
 li{
     list-style : none;
+}
+
+img{
+    max-width : 100%;
+    display : block;
 }
 
 a{
@@ -205,6 +213,7 @@ nav.active .hamburger span{
     /* justify-content: space-between; */
     align-items: start;
     transition: right .5s ease;
+    overflow-y : auto;
 }
 
 .mobile-menu.open{
@@ -298,9 +307,9 @@ header{
 .carousel-wrapper,
 .carousel-container,
 .carousel{
-    display : flex;
+    /* display : flex; */
     /* justify-content : center; */
-    align-items : center;
+    /* align-items : center; */
     height : 100%;
     width: 100%;
 }
@@ -318,11 +327,13 @@ header{
 }
 
 .carousel{
-    justify-content: flex-start;
+    /* justify-content: flex-start; */
     overflow: hidden;
     position : relative;
     /* padding-bottom: 40px; */
     scrollbar-width : none;
+    display : grid;
+    place-items : center
 }
 
 .carousel::-webkit-scrollbar{
@@ -336,13 +347,13 @@ header{
     /* margin-top: 40px; */
     /* flex: 1 0 100%; */
     width : 100%;
-    height: 100%;
+    /* height: 100%; */
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    padding-top : 120px;
+    /* justify-content: flex-start; */
+    /* padding-top : 120px; */
     align-items: center;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     /* padding-top : 40px; */
 }
 
@@ -444,7 +455,7 @@ header{
 }
 
 .carousel-item img{
-    position: absolute;
+    position: fixed;
     inset : 0;
     width : 100%;
     height : 100%;
@@ -532,7 +543,7 @@ header{
     left : 50%;
     z-index: -1;
     width : 20%;
-    min-width : 200px;
+    min-width : 280px;
     height : 3px;
     background-color : var(--b-theme-clr);
     transform : translate(-50%, -50%);
@@ -563,6 +574,8 @@ header{
     width : 100%;
     max-width : 350px;
     border-radius : 10px;
+    opacity : 0;
+    transform : translateY(var(--translate_down));
 }
 
 .service-box p{
@@ -610,7 +623,7 @@ header{
 }
 
 .product-section{
-    --product-clr : #ededed;
+    --product-clr : #f9f9f9;
     background: var(--product-clr);
     padding: 0 0 80px 0;
     /* height : 100vh; */
@@ -673,11 +686,12 @@ header{
 .product-box{
     width : 350px;
     background-color : var(--boxes-theme-clr);
-    border : 1px solid var(--dark-border-clr);
+    border : 1px solid var(--dark-border-clr-300);
     border-radius : 12px;
     overflow: hidden;
     transition: box-shadow .5s ease;
     cursor : pointer;
+
 }
 
 .product-box:hover{
@@ -685,38 +699,76 @@ header{
 }
 
 .product-box.hide{
+    opacity : 1;
+    scale : 1;
+    /* visibility: visible;* */
     animation : hideanim .5s linear forwards;
 }
 
 @keyframes hideanim {
     50%{
-        scale : .5;
-        opacity : .8;
+        scale : 1;
+        opacity : 1;
     }
 
+    
+
     100%{
-        scale: .5;
+        scale: 0;
         opacity : 0;
         visibility: hidden;
     }
 }
 
-.product-box img{
+.product-box.show{
+    scale : 0;
+    opacity : 0;
+    visibility : hidden;
+    animation : showanim .5s linear forwards;
+}
+
+@keyframes showanim {
+    50%{
+        scale : .7;
+        opacity : .8;
+        /* visibility: visible; */
+    }
+
+    80%{
+        opacity : 1;
+    }
+
+    100%{
+        scale: 1;
+        opacity : 1;
+        visibility: visible;
+    }
+}
+
+.product-img-container {
+    overflow: hidden;
+    height : 225px;
+    width : 100%;
+    display : flex;
+}
+
+.product-img-container img{
     width : 100%;
     height : 225px;
+    margin : auto;
     transform: scale(1.03);
     object-fit: cover; 
     object-position : 50% 30%; 
-    transition: transform .5s ease;
+    transition: transform .5s ease-in-out;
 }
 
-.product-box:hover img{
+.product-img-container:hover img{
     transform : scale(1.05)
 }
 
 .product-text-content{
     padding : 12px 15px;    
-    border-top : 1px solid var(--dark-border-clr);
+    border-top : 1px solid var(--dark-border-clr-300);
 }
 
 .product-name{
@@ -830,12 +882,16 @@ header{
 }
 
 .testimonial{
-    flex : 1 0 calc(25% - 5px);
-    padding : 0px 15px;
-    border-radius : 10px;
     position : relative;
+    flex : 1 0 calc(25% - 5px);
+    height : max-content;
+    padding : 10px 15px;
+    border-radius : 10px;
     scroll-snap-align: start;
     overflow: hidden;
+    isolation : isolate;
+    opacity : 0;
+    transform : translateY(var(--translate_down));
     /* height : 200px; */
 }
 
@@ -847,33 +903,16 @@ header{
     width: 100%;
     background-color: var(--boxes-theme-clr);
     border-radius: inherit;
-
+    z-index : -1;
 }
 
-.testimonial-scroll-section{
-    max-width : 1200px;
-    width : 90%;
-    margin: auto;
-    display : flex;
-    align-items : center;
-    gap : 10px;
-    padding : 10px 15px;
-    overflow-x : auto;
-    scroll-snap-type: x mandatory;
-    scroll-padding : 0 10px;
+.quote-icon{
+    height: 80px;
+    width: 80px;
+    /* position: absolute; */
+    object-fit: cover;
+    transform: translate(-10px, 5px);
 }
-
-.testimonial{
-    flex : 1 0 calc(25% - 5px);
-    height : 250px;
-    background-color: var(--boxes-theme-clr);
-    padding : 10px 15px;
-    border-radius : 10px;
-    height : max-content;
-    scroll-snap-align: start;
-}
-
-
 
 .testimonial p{
     margin : 0 0 5px;
@@ -883,15 +922,6 @@ header{
     color : var(--text-dark-clr-600);
     /* position : absolute;
     top : -44px; */
-}
-
-.quote-icon{
-    height: 80px;
-    width: 80px;
-    /* position: absolute; */
-    object-fit: cover;
-    transform: translate(0px, 18px)
-
 }
 
 .client-info{
@@ -919,8 +949,6 @@ header{
     color : var(--text-dark-clr-600);
     font-size : 15px;
 }
-
-
 
 .testimonial-btn-container{
     max-width : 500px;
@@ -1035,15 +1063,25 @@ footer{
     display : flex;
     align-items : center;
     gap : 10px;
+    transition : color 1s ease;
     /* position: relative; */
 }
 
 .quick-links-container a::before{
     content : url('/static/img/arrow.svg');
     height : 25px;
-    width : 25px
+    width : 25px;
+    transition : transform 1s ease;
     /* position : absolute; */
      
+}
+
+.quick-links-container a:hover{
+    color : white;
+}
+
+.quick-links-container a:hover::before{
+    transform : translateX(10px);
 }
 
 .newsletter-box{
@@ -1080,7 +1118,7 @@ footer .newsletter-input-container{
 }
 
 .copyright-links-container {
-        display: flex;
+    display: flex;
     align-items: center;
     gap: 20px;
 }
@@ -1095,9 +1133,34 @@ footer .newsletter-input-container{
     object-position : 50% 20%;
 }
 
-@media(max-width : 1100px){
+@media(min-width : 1200px){
+    .testimonial:nth-child(1){
+        animation-delay : 0s;
+    }
+
+    .testimonial:nth-child(2){
+        animation-delay : .5s;
+
+    }
+
+    .testimonial:nth-child(3){
+        animation-delay : 1s;
+
+    }
+
+    .testimonial:nth-child(4){
+        animation-delay : 1.5s;
+
+    }
+}
+
+@media(max-width : 1200px){
     nav .container{
         justify-content: flex-start;
+    }
+
+    a.nav-link::after{
+        display : none;
     }
 
     .hamburger{
@@ -1153,7 +1216,7 @@ footer .newsletter-input-container{
 
 @media(max-width : 400px){
     header{
-        height : 70vh;
+        height : 100vh;
         min-height: 450px;
     }
 
@@ -1181,6 +1244,10 @@ footer .newsletter-input-container{
         align-items: flex-start;
         justify-content: center;
         margin-top: 30px;
+    }
+
+    .copyright-links-container a {
+        width : 100%;
     }
 /* 
     .subscribe-btn{
@@ -1253,5 +1320,23 @@ footer .newsletter-input-container{
 
     to{
         left : 0%;
+    }
+}
+
+.addAnim{
+    animation : intAnim .5s ease forwards var(--i);
+}
+
+@keyframes intAnim{
+    from {
+        opacity : 0;
+        transform : translateY(var(--translate_down))
+
+    }
+
+    to{
+        opacity : 1;            
+        transform : translateY(0)
+
     }
 }
