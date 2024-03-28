@@ -1,1 +1,49 @@
 @import url("pages.css");
+
+.cbt-banner-section{
+    display : flex;
+}
+
+.cbt-banner-section-img-container{
+    width : 45%;
+}
+
+.cbt-text-section{
+    width: 55%;
+    padding : 70px 20px 70px 30px;
+    background : white;
+}
+
+.cbt-banner-section-img-container img{
+    height : 500px;
+    width : 100%;
+    object-fit : cover;
+}
+
+.cbt-text-section h2{
+    font-size : clamp(3.5rem, 4.5vw, 2rem);
+    margin-bottom : 10px;
+}
+
+.cbt-text-section p{
+    font-size : 13px;
+    line-height : 1.8;
+    max-width : 600px;
+    color : rgba(0,0,0,.7)
+}
+
+@media(max-width : 900px){
+    .cbt-banner-section{
+        flex-direction: column;
+    }
+
+    .cbt-banner-section-img-container{
+        width : 100%;
+
+    }
+
+    .cbt-text-section{
+        width: 100%;
+        max-width : 
+    }
+}

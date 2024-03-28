@@ -20,7 +20,7 @@
 
 .banner-img-container img{
     width : 100%;
-    min-width : 400px;
+    min-width : 300px;
     aspect-ratio : 1;
     object-fit : cover;
     object-position: center;
@@ -50,7 +50,7 @@
 
 .details-text{
     color : rgba(0,0,0,.7);
-    font-size : 1rem;
+    font-size : clamp(.8rem, 2.5vw, 1rem);
     line-height: 1.8;
     margin: 10px 0 0;
     max-width : 600px;
@@ -62,9 +62,10 @@
     padding: 40px 15px 50px
 }
 
-.logistics-service-head{
+.logistics-service-head,
+.logistics-advantages-head{
     margin : 0 0 0 0;
-    font-size : clamp(2rem, 3.5vw, 3rem);
+    font-size : clamp(1.2rem, 4.5vw, 3rem);
     text-align: center;
     color : var(--b-theme-clr);
     position : relative;
@@ -82,9 +83,9 @@
     top : calc(50% + 4px);
     left : 50%;
     transform : translate(-50%, -50%);
-    width : 45%;
     height : 5px;
-    min-width : 300px;
+    width : 90%;
+    max-width : 600px;
     border-radius : 5px;
     background-color : var(--b-theme-clr);
     z-index : -1;
@@ -129,6 +130,40 @@
     line-height: 1.6;
 }
 
+.logistics-advantages-section{
+    display : flex;
+    /* align-items :  center; */
+}
+
+.advantages-banner-section{
+    width : 45%;
+}
+
+.advantages-text-section{
+    background-image: linear-gradient(240deg, #4481eb 0%, #04befe 100%);
+    padding : 60px 20px;
+    width : 55%;
+}
+
+.advantages-text-section h2{
+    font-size: clamp(3.5rem, 4.5vw, 2rem);
+    margin-bottom: 10px;
+    color: rgba(255,255,255,.8);
+}
+
+.advantages-text-section p{
+    color: #ffffffc9;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 20px auto 0;
+}
+
+.advantages-banner-section img{
+    height : 500px;
+    width : 100%;
+    object-fit : cover;
+}
+
 @media(max-width : 900px){
     .banner-section{
         flex-direction: column;
@@ -152,5 +187,23 @@
 
     .details-text{
         margin: 15px auto 0
+    }
+
+    .logistics-advantages-section{
+        flex-direction : column;
+    }
+
+    .advantages-banner-section,
+    .advantages-text-section{
+        width : 100%;
+    }
+
+    .advantages-text-section{
+        padding : 120px 30px;    
+    }
+
+    .advantages-banner-section img{
+        height : 400px;
+        object-position : center;
     }
 }

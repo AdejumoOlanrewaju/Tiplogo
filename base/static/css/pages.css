@@ -70,7 +70,7 @@
 }
 
 .banner-content h2{
-    font-size: clamp(2rem, 5.5vw, 5rem);
+    font-size: clamp(3rem, 5.5vw, 5rem);
     margin: 0 40px 10px
 }
 
@@ -78,6 +78,7 @@
 
 .banner-content p{
     max-width : 600px;
+    width: 90%;
     margin  : 30px auto 0;
     color : var(--text-light-clr);
     line-height: 1.6; 
@@ -193,14 +194,16 @@
 .sea.newsletter-section,
 .bulb.newsletter-section,
 .ict.newsletter-section,
-.logistics.newsletter-section{
+.logistics.newsletter-section,
+.cbt.newsletter-section{
     background-color : var(--b-theme-mid-clr)
 }
 
 .sea.newsletter-section .subhead span,
 .bulb.newsletter-section .subhead span,
 .ict.newsletter-section .subhead span,
-.logistics.newsletter-section .subhead span{
+.logistics.newsletter-section .subhead span,
+.cbt.newsletter-section .subhead span{
     background-color : var(--b-theme-mid-clr)
 
 }
@@ -328,10 +331,6 @@
 
     .banner-content h2{
         font-size : 1.5rem
-    }
-
-    .underline{
-        margin : 0;
     }
 
     .banner-content p{

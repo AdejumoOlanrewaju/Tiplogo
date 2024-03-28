@@ -94,7 +94,48 @@
 
         </header>
 
-        <main></main>
+        <main>
+            <section class = "cbt-banner-section">
+                <div class = "cbt-banner-section-img-container">    
+                    <img src = "/static/img/cbt-img-2.jpg" alt = "">
+                </div>
+                <div class = "cbt-text-section">
+                    <h2>TIPLOGO CBT</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Quos, placeat aliquid, ratione ut dolor mollitia minima sapiente voluptas 
+                        aspernatur accusamus magnam! Delectus ipsum placeat, 
+                        consequuntur hic at necessitatibus perferendis dolor?
+                        sit amet consectetur adipisicing elit.
+                         Adipisci blanditiis iure commodi, dicta error voluptas minima 
+                         sapiente iste voluptatem voluptate deserunt aut aliquid sunt cupiditate magni 
+                        accusantium nesciunt nihil placeat.
+                    </p>
+                </div>
+            </section>
+            <section id = "newsletter" class = "cbt newsletter-section">
+                <div class = "head-container">
+                    <p class = "subhead"><span>NEWSLETTER</span></p>
+                    <h3 class = "head">Stay Always In Touch</h3>
+                </div>
+
+                <p class = "newsletter-section-details">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Iure doloribus earum ipsum velit amet sequi delectus, 
+                    similique nobis 
+                </p>
+
+            
+                {% for messages in messages %}
+                    {{messages}}
+                {% endfor %}
+
+                <form  method ='post' class = "newsletter-input-container">
+                    {% csrf_token %}
+                    <input type = "text" placeholder="Enter Your Email" required name = "email"/>
+                    <button type = "submit"><img alt = "send message icon" src = "/static/img/message.svg"></button>
+                </form>
+            </section>    
+            <section></section>
+        </main>
         
         <footer>
             <div class = "footer-wrapper">
