@@ -1,1 +1,170 @@
 @import url("pages.css");
+
+.section-template{
+    display : flex;
+}
+
+.section-img-container{
+    width : 45%;
+}
+
+.section-text-template{
+    width: 55%;
+    padding : 100px 20px 70px 30px;
+    background : white;
+}
+
+.section-img-container img{
+    height : 500px;
+    width : 100%;
+    object-fit : cover;
+}
+
+.section-text-template span{
+    font-size: 12px;
+    color : rgba(0,0,0,.6);
+}
+
+.section-text-template h2{
+    font-size : clamp(3.5rem, 4.5vw, 2rem);
+    margin-bottom : 15px;
+}
+
+.section-text-template p{
+    font-size : 14px;
+    line-height : 1.9;
+    max-width : 600px;
+    color : rgba(0,0,0,.7)
+}
+
+.cbt-services-section{
+    --bg-clr : #f5f8ff;
+    background-color : var(--bg-clr);
+    padding: 40px 15px 50px
+}
+
+.cbt-service-head,
+.cbt-advantages-head{
+    margin : 0 0 0 0;
+    font-size : clamp(1.2rem, 4.5vw, 3rem);
+    text-align: center;
+    color : var(--b-theme-clr);
+    position : relative;
+    z-index : 1;
+}
+
+.cbt-service-head span{
+    background-color: var(--bg-clr);
+    padding: 0 10px;
+}
+
+.cbt-service-head span::after{
+    content : '';
+    position : absolute;
+    top : calc(50% + 4px);
+    left : 50%;
+    transform : translate(-50%, -50%);
+    height : 5px;
+    width : 90%;
+    max-width : 600px;
+    border-radius : 5px;
+    background-color : var(--b-theme-clr);
+    z-index : -1;
+}
+
+.cbt-service-block-wrapper{
+    display : flex;
+    flex-wrap : wrap;
+    gap: 1rem;
+    margin-top : 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.cbt-service-box{
+    /* width : 500px; */
+    width : 30%;
+    min-width : 300px;
+    height : 300px;
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color : white;
+    padding : 20px 15px;
+    border-radius : 10px;
+    text-align : center;
+    box-shadow : 0px 10px 15px rgba(0,0,0,.14);
+    position :relative;
+    z-index : 1;
+    overflow: hidden;
+}
+
+.cbt-service-box::before{
+    content : '';
+    position : absolute;
+    width : 130px;
+    height : 170%;
+    background : linear-gradient(180deg, var(--b-theme-clr), cyan);
+    animation : role 3s linear forwards infinite;
+}
+
+.cbt-service-box::after{
+    content : '';
+    position : absolute;
+    inset : 2px;
+    background : white;
+    border-radius: 8px;
+}
+
+@keyframes role{
+    to{
+        transform : rotate(360deg)
+    }
+}
+
+.cbt-service-box svg{
+    width : 50px;
+    height : 50px;
+    fill: var(--b-theme-clr)
+
+}
+
+.cbt-service-box h3{
+    margin: 7px 0;
+    font-size: clamp(1.5rem, 2.5vw, 1.8rem);
+}
+
+.cbt-service-box p{
+    font-size : .9rem;
+    color : rgba(0,0,0,.6);
+    line-height: 1.6;
+}
+
+.cbt-service-box svg,
+.cbt-service-box h3,
+.cbt-service-box p{
+    position: relative;
+    z-index : 10
+}
+
+.cbt .contact-link{
+    border-radius: 10px;
+    padding : 10px 65px;
+    cursor : pointer;
+}
+
+@media(max-width : 900px){
+    .section-template{
+        flex-direction: column;
+    }
+
+    .section-img-container{
+        width : 100%;
+
+    }
+
+    .section-text-template{
+        width: 100%;
+    }
+}
