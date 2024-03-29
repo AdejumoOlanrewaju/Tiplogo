@@ -1,14 +1,12 @@
 
 from typing import Any
 from django.core.mail import EmailMessage
-from django.forms import BaseModelForm
-from django.http import HttpResponse
 from django.shortcuts import render ,redirect ,get_object_or_404
 from .forms import SubcribersForm ,MailMessageForm ,ContactForm, EmailTemplateForm,TiplogoPostForm,FishPostForm,JambPostForm
 from django.views import generic
 from django.urls import reverse
 from django.contrib import messages
-from .models import Subcribers ,MailMessage ,EmailTemplate, TiplogoPost ,FishPost,JambPost,Contact
+from .models import Subcribers ,MailMessage ,EmailTemplate, TiplogoPost ,FishPost,JambPost
 from  django.core.mail import send_mail
 from django.conf import settings
 from django.template.loader import render_to_string
@@ -114,72 +112,33 @@ def mail(request):
 
 
 
-# def contact(request):
-#     if request.method == 'POST':
-#         form = ContactForm(request.POST)
-#         if form.is_valid():
-#             # Get form data
-#             name = form.cleaned_data['name']
-#             email = form.cleaned_data['email']
-#             message = form.cleaned_data['message']
-#             recipients_list =email
-          
-            
+def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            # Get form data
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            message = form.cleaned_data['message']
+            recipients_list =email
+            # Send email
+            send_mail(
+                name,
+                message,
+                 recipients_list,
+                ['vacan400@gmail.com'],
+                fail_silently=False,
+            )
 
-#             # Send email
-#             send_mail(
-#                 name,
-#                 message,
-#                  recipients_list,
-#                 ['vacan400@gmail.com'],
-#                 fail_silently=False,
-#             )
-        
+            messages.success(request, 'Your message has been sent successfully!')
+            return redirect('contact')
+        else:
+            messages.error(request, 'Please correct the errors in the form.')
+    else:
+        form = ContactForm()
 
-#             messages.success(request, 'Your message has been sent successfully!')
-#             return redirect('contact')
-#         else:
-#             messages.error(request, 'Please correct the errors in the form.')
-#     else:
-#         form = ContactForm()
-
-    #  return render(request, 'contact.html')
-class ContactUsPageView(generic.CreateView):
-     template_name = 'contact.html'
-     form_class =ContactForm
-     model = Contact
-
-     def get_success_url(self):
-         return reverse('contact')
-    
-     def form_valid(self, form):
-               if form.is_valid():
-              # Get form data
-                name = form.cleaned_data['name']
-                email =  form.cleaned_data['email']
-                message = form.cleaned_data['message']
-                recipients_list =email
-            
-            
-
-              # Send email
-                send_mail(
-                  name,
-                  message,
-                   recipients_list,
-                  ['vacan400@gmail.com'],
-                  fail_silently=False,
-               )
-        
- 
-               messages.success(self.request, 'Your message has been sent successfully!')
-              
-               return super(ContactUsPageView,self).form_valid(form)
-     def form_invalid(self, form):
-            
-         messages.error(self.request, 'Please correct the errors in the form.')
-
-         return super( ContactUsPageView, self).form_invalid(form)
+    context = {'form': form}
+    return render(request, 'contact.html', context)
 
 
 

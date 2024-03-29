@@ -111,7 +111,7 @@
 }
 
 .cta-head{
-    font-size : clamp(40px, 8.5vw, 55px);
+    font-size : clamp(40px, 8.5vw, 60px);
     color : var(--text-dark-clr-800);
     margin-bottom: 0px;
 }
@@ -121,10 +121,10 @@
 }
 
 .cta-details{
-    max-width: 600px;
-    color: var(--text-dark-clr-600);
+    max-width : 500px;
+    color : var(--text-dark-clr-600);
     line-height: 1.7;
-    font-size: clamp(.8rem, 3.5vw, 1rem);
+    font-size: clamp(.8rem, 3.5vw, 1.2rem);
 }
 
 .cta-link-container{
