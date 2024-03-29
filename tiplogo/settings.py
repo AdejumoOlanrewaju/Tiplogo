@@ -156,9 +156,3 @@ MEDIA_ROOT = BASE_DIR / "media"
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-# EMAIL_HOST = 'smtp-relay.brevo.com'
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
-# EMAIL_HOST_USER = 'vacan400@gmail.com'
-# EMAIL_HOST_PASSWORD = 'xsmtpsib-59a5cc7cef6a00cb54677744760002f5cee97a4fe1b973878107f929437e49ce-Qc7SORmWUZaM5vhr'
-# DEFAULT_FROM_EMAIL = 'vacan400@gmail.com'
