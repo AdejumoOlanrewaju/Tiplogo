@@ -17,16 +17,16 @@ window.addEventListener("scroll", () => {
     }
 })
 
-hamburger.addEventListener("click", () => {
-    mobileMenu.classList.add("open")
-    overlay.style.display = "block"
-    // document.body.style.overflowY = "hidden"
-})
+// hamburger.addEventListener("click", () => {
+//     mobileMenu.classList.add("open")
+//     overlay.style.display = "block"
+//     // document.body.style.overflowY = "hidden"
+// })
 
-closeMenu.addEventListener("click", () => {
-    mobileMenu.classList.remove("open")
-    overlay.style.display = "none"
-    // document.body.style.overflowY = "auto"
+// closeMenu.addEventListener("click", () => {
+//     mobileMenu.classList.remove("open")
+//     overlay.style.display = "none"
+//     // document.body.style.overflowY = "auto"
 
 
-})
+// })
