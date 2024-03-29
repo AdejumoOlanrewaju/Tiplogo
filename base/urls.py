@@ -2,7 +2,7 @@ from django.urls import path
 from .import views
 urlpatterns=[
     path('',views.index , name= 'index'),
-    path('contact', views.contact, name='contact'),
+    path('contact', views.ContactUsPageView.as_view(), name='contact'),
     path('mail',views.mail,name= 'mail'),
     path('tiplogo-cbt',views.tiplogo_cbt,name='tiplogo-cbt'),
     path('tiplogo-fish',views.tiplogo_fish,name='tiplogo-fish'),

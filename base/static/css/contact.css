@@ -61,6 +61,26 @@ header.contact-header{
     text-align : center;
 }
 
+
+@keyframes words{
+    0%, 40%{
+        content : "Get in touch with us"
+    }
+
+    41%, 60%{
+        content : "We Would Love to meet you"
+    }
+
+    61%, 80%{
+        content : "Send Us Your Thoughts"
+    }
+
+    81%, 100%{
+        content : "Fill the form and join our community"
+    }
+}
+
+
 .contact-form-container{
     padding : 20px 0;
     background : #ebefef;
@@ -135,6 +155,9 @@ header.contact-header{
     }
 
     .contact-banner-container{
-        height : 100vh
+        /* 'height : 100vh' is fallback If browser does not support calc function */
+        height : 100vh;
+        height : calc(100vh - 80px);
     }
 }
+

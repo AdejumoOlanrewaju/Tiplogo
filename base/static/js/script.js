@@ -16,6 +16,7 @@ let serviceBox = document.querySelectorAll(".service-box")
 let testimonialScrollSection = document.querySelector(".testimonial-scroll-section")
 let testimonialScrollBtn = document.querySelectorAll(".testimonial-btn-container button")
 let testimonial = document.querySelectorAll(".testimonial")
+let overlay = document.querySelector(".overlay")
 
 let counter = 0
 let touchStartX
@@ -38,6 +39,20 @@ window.addEventListener("scroll", () => {
         document.querySelector("nav").classList.remove("active")
         // hamburgerSpan.forEach(el => el.style.backgroundColor = "white")
     }
+})
+
+hamburger.addEventListener("click", () => {
+    mobileMenu.classList.add("open")
+    overlay.style.display = "block"
+    // document.body.style.overflowY = "hidden"
+})
+
+closeMenu.addEventListener("click", () => {
+    mobileMenu.classList.remove("open")
+    overlay.style.display = "none"
+    // document.body.style.overflowY = "auto"
+
+
 })
 
 // Script for tab system in product page
@@ -95,6 +110,14 @@ function categorizeProducts(link){
     }
 }
 
+let intervalId
+
+function autoSlide(){
+    intervalId = setInterval(nextImage, 3000)
+}
+
+autoSlide()
+
 nextBtn.addEventListener("click", nextImage)
 function nextImage(){
     carouselItems[counter].style.animation = "next1 .5s ease forwards"
@@ -107,6 +130,7 @@ function nextImage(){
 
     // console.log(counter)
     carouselItems[counter].style.animation = "next2 .5s ease forwards"
+    clearInterval(intervalId)
 }
 
 prevBtn.addEventListener("click", prevImage)
@@ -122,15 +146,10 @@ function prevImage(){
     }
 
     carouselItems[counter].style.animation = "prev2 .5s ease forwards"
+    clearInterval(intervalId)
 }
 
-let intervalId
 
-function autoSlide(){
-    intervalId = setInterval(nextImage, 3000)
-}
-
-//  autoSlide()
 
 function touchSlide(){
     carouselContainer.addEventListener("touchstart", (e) => {
@@ -162,12 +181,12 @@ function touchSlide(){
 touchSlide()
 
 carouselContainer.addEventListener("mouseenter", ()=>{
-    clearInterval(intervalId)
+    autoSlide()
 })
 
-carouselContainer.addEventListener("mouseleave", () => {
-    //  autoSlide()
-})
+// carouselContainer.addEventListener("mouseleave", () => {
+//      autoSlide()
+// })
 
 // Script for handling responsive navigation
 hamburger.addEventListener("click", () => {
@@ -269,3 +288,4 @@ handleAnim(serviceBox)
 // carouselItems.forEach(el => {
 //     console.log(el.childNodes)
 // })
+
