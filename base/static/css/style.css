@@ -187,8 +187,8 @@ nav.active .hamburger span{
     background-color : black;
 }
 
-.mobile-subscribe-btn,
-.subscribe-btn{
+.mobile-contact-btn,
+.contact-btn{
     background-color: var(--b-theme-clr);
     padding : 10px 25px;
     border-radius: 50px;
@@ -289,7 +289,7 @@ nav.active .hamburger span{
 
 }
 
-.mobile-subscribe-btn{
+.mobile-contact-btn{
     margin: 15px 0 20px 15px;
 }
 
@@ -1173,7 +1173,7 @@ footer .newsletter-input-container{
         display : none;
     }
 
-    .subscribe-btn{
+    .contact-btn{
         /* margin : 0 20px 0 auto; */
         display : none;
     }
