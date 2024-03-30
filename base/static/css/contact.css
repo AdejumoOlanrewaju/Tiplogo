@@ -61,6 +61,23 @@ header.contact-header{
     text-align : center;
 }
 
+.typewriter-cursor{
+    color : rgb(4, 115, 241);
+    animation : cursor 1s infinite steps(1)
+}
+
+@keyframes cursor{
+    0%, 100%{
+        opacity : 0;
+    }
+
+    50%{
+        opacity : 1;
+    }
+}
+
+
+
 .contact-form-container{
     padding : 20px 0;
     background : #ebefef;
@@ -106,12 +123,14 @@ header.contact-header{
 
 .contact-form input:focus,
 .contact-form textarea:focus{
-    border : 1px solid rgba(0,0,0,.6);
+    outline : 1px solid var(--b-theme-clr);
+    border-color : transparent;
 }
 
 .contact-form input:focus-visible,
 .contact-form textarea:focus-visible{
-    border : 1px solid rgba(0,0,0,.6);
+    outline : 1px solid var(--b-theme-clr);
+    border-color : transparent;
 
 }
 
@@ -127,6 +146,8 @@ header.contact-header{
     color: rgba(255,255,255,.8);
     letter-spacing: 1px;
 }
+
+
 
 @media(max-width : 1000px){
     .contact-banner-container,
