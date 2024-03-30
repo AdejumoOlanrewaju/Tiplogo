@@ -1,0 +1,28 @@
+@import url("pages.css");
+
+header.about-header{
+    min-height : 80px;
+    height : 80px;
+    background-color: var(--text-clr);
+}
+
+.about-page nav{
+    background : white;
+    height : 80px;
+}
+
+.about-page nav .container{
+    height : 100%;
+}
+
+.about-page a.nav-link{
+    color  : var(--b-theme-clr)
+}
+
+.about-page a.nav-link::after{
+    background-color : var(--b-theme-clr)
+}
+
+.about-page .hamburger span{
+    background-color : black;
+}
