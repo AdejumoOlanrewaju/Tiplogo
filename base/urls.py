@@ -23,4 +23,5 @@ urlpatterns=[
     path('update/<int:pk>/',views.jambpostupdateview.as_view(),name ='update'),
     path('delete<int:pk>/',views.DeleteJambPost.as_view(),name ='delete'),
     path('email-list',views.emalistviews.as_view(),name='email-list'),
+    path('about',views.about,name= 'about'),
 ]
