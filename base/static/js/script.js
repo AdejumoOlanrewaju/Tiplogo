@@ -24,7 +24,7 @@ let touchEndX
 let swipeDifference
 let threshold = 50
 
-if(home){
+if(carouselContainer){
     console.log("hello")
     tabLine.style.width = `${tabLinks[0].offsetWidth}px`
     tabLine.style.left = `${tabLinks[0].offsetLeft}px`

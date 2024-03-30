@@ -8,6 +8,7 @@
         <link rel = "stylesheet" href = "{% static 'css/cbt.css'%}">
         <link rel = "stylesheet" href = "{% static 'css/pages.css'%}">
         <link rel = "stylesheet" href = "{% static 'css/logistics.css'%}">
+        
         <script defer src = "{% static 'js/script.js' %}"></script>
         <title>TIPLOGO </title>
     </head>
@@ -37,7 +38,7 @@
                             <li><a href = "tiplogo-ict" class = "nav-link">TIPLOGO ICT</a></li>
                         </ul>
                         
-                        <a class = "subscribe-btn" href = "{% url  'contact' %}">Contact Us</a>
+                        <a class = "contact-btn" href = "{% url  'contact' %}">Contact Us</a>
                         
                     </div>
                 </nav>
@@ -62,7 +63,7 @@
                             <li><a href = "tiplogo-ict" class = "nav-link">TIPLOGO ICT</a></li>
                         </ul>
     
-                        <a class = "mobile-subscribe-btn" href = "admin">Subscribe</a>
+                        <a class = "mobile-contact-btn" href = "{% url 'contact' %}">Contact Us</a>
                     </div>
         
                     
