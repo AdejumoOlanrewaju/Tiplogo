@@ -1,5 +1,5 @@
 
-
+let home = document.querySelector(".home")
 let nextBtn = document.querySelector(".next.btn")
 let prevBtn = document.querySelector(".prev.btn")
 let carouselContainer = document.querySelector(".carousel-container")
@@ -17,7 +17,6 @@ let testimonialScrollSection = document.querySelector(".testimonial-scroll-secti
 let testimonialScrollBtn = document.querySelectorAll(".testimonial-btn-container button")
 let testimonial = document.querySelectorAll(".testimonial")
 let overlay = document.querySelector(".overlay")
-let home = document.querySelector(".home")
 
 let counter = 0
 let touchStartX
@@ -234,11 +233,9 @@ if(home){
 window.addEventListener("scroll", () => {
     if(scrollY > 0){
         document.querySelector("nav").classList.add("active")
-        // hamburgerSpan.forEach(el => el.style.backgroundColor = "black")
     
     }else{
         document.querySelector("nav").classList.remove("active")
-        // hamburgerSpan.forEach(el => el.style.backgroundColor = "white")
     }
 })
 
