@@ -107,7 +107,7 @@
 .ict-cta-details-wrapper,
 .led-cta-details-wrapper{
     padding : 60px  30px;
-    max-width : 55%;
+    max-width : 60%;
 }
 
 .cta-head{
@@ -121,10 +121,10 @@
 }
 
 .cta-details{
-    max-width : 500px;
+    max-width : 600px;
     color : var(--text-dark-clr-600);
-    line-height: 1.7;
-    font-size: clamp(.8rem, 3.5vw, 1.2rem);
+    line-height: 1.9;
+    font-size: clamp(.8rem, 3.5vw, 1rem);
 }
 
 .cta-link-container{
@@ -163,13 +163,13 @@
 }
 
 .cta-banner-container{
-    width : 40%;
+    width : 35%;
     position: relative;
     overflow: hidden;
 }
 
 .cta-banner-img{
-    width: 90%;
+    width: 100%;
     aspect-ratio : 2/1.6;
     /* height: 350px; */
     position: absolute;
