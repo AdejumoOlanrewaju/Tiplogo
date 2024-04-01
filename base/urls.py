@@ -24,4 +24,6 @@ urlpatterns=[
     path('delete<int:pk>/',views.DeleteJambPost.as_view(),name ='delete'),
     path('email-list',views.emalistviews.as_view(),name='email-list'),
     path('about',views.about,name= 'about'),
+    path('privacy',views.privacy,name= 'privacy'),
+    path('terms',views.terms,name= 'terms'),
 ]
