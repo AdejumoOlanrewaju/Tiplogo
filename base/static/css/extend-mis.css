@@ -1,0 +1,243 @@
+@import url("pages.css");
+
+.extend-mis.header{
+    min-height : 80px;
+    height : 80px;
+    background-color: var(--text-clr);
+}
+
+.extend-mis.page nav{
+    background : white;
+    height : 80px;
+}
+
+.extend-mis.page nav .container{
+    height : 100%;
+}
+
+.extend-mis.page a.nav-link{
+    color  : var(--b-theme-clr)
+}
+
+.extend-mis.page a.nav-link::after{
+    background-color : var(--b-theme-clr)
+}
+
+.extend-mis.page .hamburger span{
+    background-color : black;
+}
+
+.contact.wrapper{
+    display : grid;
+    flex-wrap : wrap;
+    grid-template-columns: 50% 50%;
+    /* height : 100vh; */
+}
+
+
+.contact.banner-container{
+    grid-column: 1/2;
+}
+.contact-form-container{
+    grid-column: 2/3;
+}
+
+.contact.banner-container{
+    /* background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%); */
+    background-image: linear-gradient(45deg, #4481eb 0%, #04befe 100%);
+    /* background-color : rgba(0,0,0,.8); */
+    /* background-blend-mode : darken; */
+    background-size : cover;
+    background-position : center;
+    display : flex;
+    align-items: center;
+}
+
+.contact.banner-head{
+    /* margin: 0; */
+    font-size : clamp(2rem, 5.5vw, 3rem);
+    color : rgba(255,255,255,.8);
+    width : 80%;
+    margin: auto;
+    text-align : center;
+}
+
+.typewriter-cursor{
+    color : rgb(4, 115, 241);
+    animation : cursor 1s infinite steps(1)
+}
+
+@keyframes cursor{
+    0%, 100%{
+        opacity : 0;
+    }
+
+    50%{
+        opacity : 1;
+    }
+}
+
+.contact-form-container{
+    padding : 20px 0;
+    background : #ebefef;
+}
+
+.contact-form-head{
+    font-size : clamp(2.5rem, 3.5vw, 1.7rem);
+    margin : 0px 0 12px 0;
+    text-align: center;
+}
+
+.contact-form{
+    width : 90%; 
+    margin : auto;
+    display : flex;
+    flex-direction : column;
+    gap : 1rem
+    /* align-items : center; */
+}
+
+.contact-form p{
+    margin : 0;
+}
+
+.contact-message-text{
+    padding: 10px 20px;
+    background: #81ce06;
+    width: 90%;
+    margin: 10px auto;
+    max-width: 400px;
+    border-radius: 15px;
+    color: rgb(255 255 255);    
+    font-size: 1rem;
+    text-align: center;
+    display : none;
+}
+
+.contact-message-text.hiding{
+    display : block;
+    animation : fadeMessage 1s ease 3s 1 forwards;
+}
+
+@keyframes fadeMessage {
+    0%{
+        opacity : 1;
+        transform : translateY(0);
+        visibility : visible;
+    }
+
+    50%{
+        opacity : .5;
+    }
+
+    100%{
+        opacity : 0;
+        transform : translateY(-20px);
+        visibility : hidden;
+    }
+}
+
+.contact-form label{
+    display : inline-block;
+    font-size : .9rem;
+    color : rgba(0,0,0,.8);
+    margin-bottom : 5px;
+    letter-spacing: 1px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    display : block;
+    padding : 10px 20px;
+    border : 1px solid rgba(0,0,0,.2);
+    border-radius : 5px;
+    font-size : 1.2rem;
+    background-color: rgba(255,255,255,.4);
+    width : 100%;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+    outline : 1px solid var(--b-theme-clr);
+    border-color : transparent;
+}
+
+.contact-form input:focus-visible,
+.contact-form textarea:focus-visible{
+    outline : 1px solid var(--b-theme-clr);
+    border-color : transparent;
+
+}
+
+.contact-form textarea{
+    height : 200px;
+}
+
+.submit-btn{
+    padding : 15px;
+    font-size : 1rem;
+    background-image: linear-gradient(45deg, #4481eb 0%, #04befe 100%);
+    border-radius : 10px;
+    color: rgba(255,255,255,.8);
+    letter-spacing: 1px;
+}
+
+.extend-banner-section{
+    height : calc(70vh - 80px);
+    display : flex;
+    background-image : url("/static/img/banner-img.jpg");
+    background-position : center;
+    background-size : cover;
+    background-repeat : no-repeat;
+    background-color: rgba(0,0,0,.5);
+    background-blend-mode: darken;
+}
+
+.extend-banner-section h2{
+    font-size : clamp(3rem, 5.5vw, 5rem);
+    margin : auto;
+    color : rgba(255,255,255,.8);
+}
+
+.extend-text-section{
+    padding : 20px 40px;
+    background : white;
+}
+
+.extend-text-section h3{
+    font-size : clamp(2.8rem, 5.5vw, 4rem);
+    margin-bottom : 0;
+}
+
+.extend-text-section p{
+    color : rgba(0,0,0,.8);
+    line-height : 1.7;
+    font-size : 1.1rem;
+}
+
+.errorList li{
+    color : red;
+    font-size : 1.1rem;
+}
+
+@media(max-width : 1000px){
+    .contact.banner-container, .contact-form-container{
+        width : 100%;
+    }
+
+    .contact.banner-container{
+        height : 70vh
+    }
+
+    .contact.wrapper{
+        display : block
+    }
+}
+
+@media(max-width : 450px){
+    .extend-banner-section{
+        height : calc(50vh - 80px)
+    }
+}
+
+

@@ -1,0 +1,7 @@
+{%  for post_list in post_list  %}
+  <h1>{{post_list.title}}</h1>
+    <img src="{{ post_list.images.url }}" alt="Image">
+<a href="{% url 'update' post_list.pk %}">update</a>
+<a href="{% url 'delete' post_list.pk %}">delete</a>
+
+{% endfor %}
