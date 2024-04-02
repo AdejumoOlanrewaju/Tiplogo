@@ -27,5 +27,13 @@
             <input type = "password" placeholder = "Confirm Pssword" name = "password2" class = "input password">
           </div> -->
         </form>
-
+        <script>
+            let contactMessage = document.querySelector(".contact-message-text")
+            if(contactMessage){
+                contactMessage.classList.add("hiding")
+                setTimeout(() => {
+                    contactMessage.style.display = "none"
+                }, 4000)
+            }
+        </script>
        {% endblock %}

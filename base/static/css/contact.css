@@ -89,6 +89,39 @@ header.contact-header{
     text-align: center;
 }
 
+.contact-message-text{
+    padding: 12px 15px;
+    width: 450px;
+    margin: 10px auto;
+    background-color: rgb(119, 192, 8);
+    color: rgba(255, 255, 255, .8);
+    font-size: 1.2rem;
+    border-radius: 30px;
+    text-align: center;
+
+}
+
+.hiding{
+    display : block;
+    animation : fadeUp 1s ease 3s forwards;
+}
+
+@keyframes fadeUp {
+    0%{
+        opacity : 1;
+        transform: translateY(0);
+    }
+
+    50%{
+        opacity: .5;
+    }
+
+    100%{
+        opacity : 0;
+        transform: translateY(-20px);
+    }
+}
+
 .contact-form{
     width : 90%; 
     margin : auto;
@@ -158,4 +191,8 @@ header.contact-header{
     .contact-banner-container{
         height : 100vh
     }
+}
+
+.errorlist li{
+    color : #db1b1b;
 }
