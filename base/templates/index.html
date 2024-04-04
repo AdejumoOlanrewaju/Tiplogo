@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
         
-                <div class = 'carousel-wrapper'>
+                <div class = 'carousel-wrapper'> 
                     <div class = 'carousel-container'>
-                        <div class = " carousel">
+                        <div class = "carousel">
                             <div class = "active carousel-item">
                                 <div class = "content">
                                     <img class="big" src = "/static/img/business_poster.jpg" alt = "carousel-img" />
@@ -81,7 +81,7 @@
                             <div class = "carousel-item">
                                 <div class = "content">
 
-                                    <img src = "/static/img/led_bulb2.jpg" alt = "carousel-img" />
+                                    <img src = "/static/img/truck1.jpg" alt = "carousel-img" />
                                     <h4>Our Clients Are Our Priority</h4>
                                     <h2>TIPLOGO LOGISTICS</h2>
                                     <div class = "underline">
@@ -97,7 +97,7 @@
                                         iusto deserunt ducimus, rem magni autem eligendi blanditiis.
                                     </p>
                                     <div class = "header-cta-container">
-                                        <a href = "tiplogo-led" class = "cta-1">GET STARTED NOW</a>
+                                        <a href = "tiplogo-logistics" class = "cta-1">GET STARTED NOW</a>
                                         <a href = "#services-section" class = "cta-2">EXPLORE</a>
                                     </div>
                                 </div>
@@ -107,7 +107,7 @@
                             <div class = "carousel-item">
                                 <div class = "content">
 
-                                    <img src = "/static/img/led_bulb2.jpg" alt = "carousel-img" />
+                                    <img src = "/static/img/cctv_camera_4.png" alt = "carousel-img" />
                                     <h4>Our Clients Are Our Priority</h4>
                                     <h2>TIPLOGO ICT SALES & SERVICES</h2>
                                     <div class = "underline">
@@ -123,7 +123,7 @@
                                         iusto deserunt ducimus, rem magni autem eligendi blanditiis.
                                     </p>
                                     <div class = "header-cta-container">
-                                        <a href = "tiplogo-led" class = "cta-1">GET STARTED NOW</a>
+                                        <a href = "tiplogo-ict" class = "cta-1">GET STARTED NOW</a>
                                         <a href = "#services-section" class = "cta-2">EXPLORE</a>
                                     </div>
                                 </div>
@@ -255,7 +255,7 @@
                         </div>
 
                         <div class = "products-boxes-container">
-                            <div id = "bulb" class = "product-box">
+                            <div style = "--i : .2s" id = "bulb" class = "product-box">
                                 <div class = "product-img-container">
                                     <img src = "/static/img/led_bulb1.jpg" alt = "Led bulb product image">
                                 </div>
@@ -265,7 +265,7 @@
                                 </div>
                             </div>
 
-                            <div id = "bulb" class = "product-box">
+                            <div style = "--i : .4s" id = "bulb" class = "product-box">
                                 <div class = "product-img-container">
                                     <img src = "/static/img/led_bulb2.jpg" alt = "Led bulb product image">
                                 </div>
@@ -275,7 +275,7 @@
                                 </div>
                             </div>
                             
-                            <div id = "seafood" class = "product-box">
+                            <div style = "--i : .6s" id = "seafood" class = "product-box">
                                 <div class = "product-img-container">
                                     <img src = "/static/img/seafood_1.jpg" alt = "Led bulb product image">
                                 </div>
@@ -285,7 +285,7 @@
                                 </div>
                             </div>
 
-                            <div id = "Equipment" class = "ict product-box">
+                            <div style = "--i : .2s" id = "Equipment" class = "ict product-box">
                                 <div class = "product-img-container">
                                     <img  src = "/static/img/cctv_camera_4.png" alt = "Led bulb product image">
                                 </div>
@@ -295,7 +295,7 @@
                                 </div>
                             </div>
 
-                            <div id = "seafood" class = "product-box">
+                            <div style = "--i : .4s" id = "seafood" class = "product-box">
                                 <div class = "product-img-container">
                                     <img src = "/static/img/seafood_3.jpg" alt = "Led bulb product image">
                                 </div>
@@ -305,9 +305,40 @@
                                 </div>
                             </div>
 
-                            <div id = "Equipment" class = "ict product-box">
+                            <div style = "--i : .6s" id = "Equipment" class = "ict product-box">
                                 <div class = "product-img-container">
                                     <img src = "/static/img/cctv_camera_2.png" alt = "Led bulb product image">
+                                </div>
+                                <div class = "ict product-text-content">
+                                    <p class = "ict product-name">cctv camera</p>
+                                    <p class = "ict product-details">Ict Equipment Sales And Delivery</p>
+                                </div>
+                            </div>
+
+                            <div style = "--i : .2s" id = "seafood" class = "remove_mis sea product-box">
+                                <div class = "product-img-container"> 
+                                    <img src = "/static/img/seafood_5.jpg" alt = "Led bulb product image">
+                                </div>
+                                <div class = "sea product-text-content">
+                                    <p class = "sea product-name">Crayfish</p>
+                                    <p class = "sea product-details">Sea Food Sales And Delivery</p>
+                                </div>
+                            </div>
+                                
+                            <div style = "--i : .4s" id = "bulb" class = "remove_mis bulb product-box">
+                                <div class = "product-img-container">
+                                    <img src = "/static/img/led_bulb5.jpg" alt = "Led bulb product image">
+                                </div>
+                                <div class = "bulb product-text-content">
+                                    <p class = "bulb product-name">Led Bulb</p>
+                                    <p class = "bulb product-details">Led Bulb Sales And Delivery</p>
+                                </div>
+                            </div>
+
+                            
+                            <div id = "Equipment" class = "remove_mis ict product-box">
+                                <div class = "product-img-container">
+                                <img class = "reduce_img_1" src = "/static/img/cctv_camera_5.png" alt = "Led bulb product image">
                                 </div>
                                 <div class = "ict product-text-content">
                                     <p class = "ict product-name">cctv camera</p>

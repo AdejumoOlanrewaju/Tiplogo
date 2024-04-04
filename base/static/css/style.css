@@ -692,7 +692,8 @@ header{
     overflow: hidden;
     transition: box-shadow .5s ease;
     cursor : pointer;
-
+    opacity : 0;
+    transform : translateY(var(--translate_down));
 }
 
 .product-box:hover{
@@ -700,14 +701,12 @@ header{
 }
 
 .product-box.hide{
-    opacity : 1;
-    scale : 1;
     /* visibility: visible;* */
     animation : hideanim .5s linear forwards;
 }
 
 @keyframes hideanim {
-    50%{
+    0%{
         scale : 1;
         opacity : 1;
     }
@@ -719,6 +718,12 @@ header{
         opacity : 0;
         visibility: hidden;
     }
+}
+
+.remove_mis{
+    visibility: hidden;
+    opacity: 0;
+    display : none;
 }
 
 .product-box.show{

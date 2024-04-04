@@ -1,4 +1,3 @@
-
 let home = document.querySelector(".home")
 let nextBtn = document.querySelector(".next.btn")
 let prevBtn = document.querySelector(".prev.btn")
@@ -49,6 +48,7 @@ if(carouselContainer){
         tabLine.style.left = `${leftPosition}px`   
     }
 
+    let removeMisEl = document.querySelectorAll(".remove_mis") 
     function categorizeProducts(link){
         if(link.dataset.category == "all"){
             productBoxes.forEach(el => {
@@ -57,7 +57,14 @@ if(carouselContainer){
                     el.style.display = "block" 
                     el.style.width = '300px'
                     el.style.maxHeight = '450px'
-                    el.classList.add("show")
+                    el.classList.add("show") 
+                    removeMisEl.forEach((el) => {
+                        el.classList.add("hide")
+                        el.classList.remove("show")
+                        el.style.width = '0px'
+                        el.style.maxHeight = '0px'
+                        el.style.display = "none" 
+                    })
                 }, 500)
             })
 
@@ -78,14 +85,21 @@ if(carouselContainer){
                     el.classList.remove("hide")
                     el.style.width = '300px'
                     el.style.maxHeight = '450px'
-                    el.classList.add("show")
+                    el.classList.add("show") 
                 }, 500)
             })
 
         }
     }
 
-    nextBtn.addEventListener("click", nextImage)
+    nextBtn.addEventListener("click", (e) => {
+        clearInterval(intervalId)
+        setTimeout(() => {
+            autoSlide()
+        }, 2000)
+        nextImage()
+    })
+
     function nextImage(){
         carouselItems[counter].style.animation = "next1 .5s ease forwards"
 
@@ -99,10 +113,15 @@ if(carouselContainer){
         carouselItems[counter].style.animation = "next2 .5s ease forwards"
     }
 
-    prevBtn.addEventListener("click", prevImage)
+    prevBtn.addEventListener("click", () => {
+        clearInterval(intervalId)
+        setTimeout(() => {
+            autoSlide()
+        }, 2000)
+        prevImage()
+    })
     function prevImage(){
-        if(counter == 0)return;
-
+        if(counter == 0)return;        
         carouselItems[counter].style.animation = "prev1 .5s ease forwards"
 
         if(counter <= 0){
@@ -115,12 +134,11 @@ if(carouselContainer){
     }
 
     let intervalId
-
     function autoSlide(){
         intervalId = setInterval(nextImage, 3000)
     }
 
-    //  autoSlide()
+     autoSlide()
 
     function touchSlide(){
         carouselContainer.addEventListener("touchstart", (e) => {
@@ -151,13 +169,20 @@ if(carouselContainer){
 
     touchSlide()
 
-    carouselContainer.addEventListener("mouseenter", ()=>{
-        clearInterval(intervalId)
-    })
+    // carouselContainer.addEventListener("mousemove", (e)=>{
+    //     // console.log(e.target.closest(".carousel .btn"))
+    //     // clearInterval(intervalId)
+    //     // autoSlide()
+    //     // if(e.target.closest(".carousel > btn")){
+    //     //     console.log("hi there")
+    //     // }
+    //     console.log("hi")
+    // })
 
-    carouselContainer.addEventListener("mouseleave", () => {
-        //  autoSlide()
-    })
+    // carouselContainer.addEventListener("mousemove", (e) => {
+    //     //  autoSlide()
+    //     console.log(e.target.className == "btn")
+    // })
 
     // Script for handling responsive navigation
 
@@ -199,7 +224,7 @@ if(carouselContainer){
             el.disabled = false
         }
     }
-
+}
     function handleAnim(elem){
         let options = {
             root : null,
@@ -226,7 +251,8 @@ if(carouselContainer){
 
     handleAnim(testimonial)
     handleAnim(serviceBox)
-}
+    handleAnim(productBoxes)
+
 // if(tabLine.style.left == tabLinks[0].offsetLeft){
 // }
 
