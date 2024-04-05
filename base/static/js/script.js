@@ -138,7 +138,7 @@ if(carouselContainer){
         intervalId = setInterval(nextImage, 3000)
     }
 
-     autoSlide()
+    //  autoSlide()
 
     function touchSlide(){
         carouselContainer.addEventListener("touchstart", (e) => {
@@ -169,20 +169,7 @@ if(carouselContainer){
 
     touchSlide()
 
-    // carouselContainer.addEventListener("mousemove", (e)=>{
-    //     // console.log(e.target.closest(".carousel .btn"))
-    //     // clearInterval(intervalId)
-    //     // autoSlide()
-    //     // if(e.target.closest(".carousel > btn")){
-    //     //     console.log("hi there")
-    //     // }
-    //     console.log("hi")
-    // })
 
-    // carouselContainer.addEventListener("mousemove", (e) => {
-    //     //  autoSlide()
-    //     console.log(e.target.className == "btn")
-    // })
 
     // Script for handling responsive navigation
 
@@ -299,4 +286,20 @@ closeMenu.addEventListener("click", () => {
 
 // carouselItems.forEach(el => {
 //     console.log(el.childNodes)
+// })
+
+
+// carouselContainer.addEventListener("mousemove", (e)=>{
+//     // console.log(e.target.closest(".carousel .btn"))
+//     // clearInterval(intervalId)
+//     // autoSlide()
+//     // if(e.target.closest(".carousel > btn")){
+//     //     console.log("hi there")
+//     // }
+//     console.log("hi")
+// })
+
+// carouselContainer.addEventListener("mousemove", (e) => {
+//     //  autoSlide()
+//     console.log(e.target.className == "btn")
 // })
