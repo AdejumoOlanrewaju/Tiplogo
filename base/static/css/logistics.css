@@ -159,9 +159,9 @@
 
 .advantages-text-section p{
     color: #ffffffc9;
-    font-size: 14px;
     line-height: 1.6;
     margin: 20px auto 0;
+    font-size: clamp(1rem, 3vw, 1.2rem);
 }
 
 .advantages-banner-section img{

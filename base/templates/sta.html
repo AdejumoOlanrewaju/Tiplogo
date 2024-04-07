@@ -144,10 +144,9 @@
         </div>
 
         <div class = "copyright-links-container">
-            <a href = "">Home</a>
-            <a href = "">Subscribe</a>
-            <a href = "">Products</a>
-            <a href = "">Services</a>
+            <a href = "/">Home</a>
+            <a href = "#newsletter">Subscribe</a>
+            <a href = "/#services-section">Services</a>
         </div>
     </div>
 </footer>
@@ -185,6 +184,16 @@ try {
 
 
 
+</script>
+
+<script>
+    let newsletterMessage = document.querySelector(".newsletter-message")
+    if(newsletterMessage){
+        newsletterMessage.classList.add("hiding")
+        setTimeout(() => {
+            newsletterMessage.style.display = "none"
+        }, 4000)
+    }
 </script>
 </body>
 </html>

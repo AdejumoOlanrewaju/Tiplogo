@@ -131,10 +131,17 @@
                                 <span class = "box-head-underline"></span>
                             </h3>
             
-                            <p class = "newsletter-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat porro at, earum deleniti provident vitae</p>
+                            <p class = "newsletter-text">
+                                Subscribe to our newsletter to get the latest update about
+                                our products.
+                            </p>
                             
+                            {% for messages in messages %}
+                                <p class = "newsletter-message">{{messages}}</p>
+                            {% endfor %}
                             
-                            <form class = "newsletter-input-container">
+                            <form method = "post" class = "newsletter-input-container">
+                                {% csrf_token %}
                                 <input type = "text" placeholder="Enter Your Email" required name = "email"/>
                                 <button type = "submit"><img alt = "send message icon" src = "/static/img/message.svg"></button>
                             </form>
@@ -147,14 +154,23 @@
                         </div>
     
                         <div class = "copyright-links-container">
-                            <a href = "">Home</a>
-                            <a href = "">Subscribe</a>
-                            <a href = "">Products</a>
-                            <a href = "">Services</a>
+                            <a href = "/">Home</a>
+                            <a href = "#newsletter">Subscribe</a>
+                            <a href = "/#services-section">Services</a>
                         </div>
                     </div>
                 </footer>
         </section>
-    
+        <script>
+            let newsletterMessage = document.querySelectorAll(".newsletter-message")
+            if(newsletterMessage){
+                newsletterMessage.forEach((el) => {
+                    el.classList.add("hiding")
+                    setTimeout(() => {
+                        el.style.display = "none"
+                    }, 11000)
+                })
+            }
+        </script>
         </body>
     </html>

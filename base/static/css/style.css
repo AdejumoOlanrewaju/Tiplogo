@@ -449,11 +449,12 @@ header{
 }
 
 .carousel-item p{
-    max-width : 600px;
-    margin  : 30px auto 0;
-    color : var(--text-light-clr);
-    line-height: 1.6; 
+    max-width: 700px;
+    margin: 30px auto 0;
+    color: var(--text-mid-light-clr);
+    line-height: 1.6;
     padding: 0 5px;
+    font-size: clamp(.9rem, 2.5vw, 1.2rem);
 }
 
 .carousel-item img{
@@ -464,6 +465,10 @@ header{
     z-index : -1;
     object-fit: cover;
     object-position: 50% 30%;
+}
+
+.carousel-item img.move{
+    transform: translate(15px 0px);
 }
 
 .header-cta-container{
@@ -816,16 +821,29 @@ header{
 .newsletter-section-details{
     max-width : 500px;
     width : 90%;
-    margin : 5px auto;
+    margin : 5px auto 30px;
     text-align : center;
     color : var(--text-mid-light-clr);
     font-size : clamp(.5rem, 2.5vh, 1rem);
 }
 
+.newsletter-message{
+    max-width: 400px;
+    width : 90%;
+    margin: 20px auto 0;
+    text-align: center;
+    padding: 12px 0px;
+    background: limegreen;
+    color: rgba(255, 255, 255, .8);
+    text-transform: capitalize;
+    font-size: 1.1rem;
+    border-radius: 50px;
+}
+
 .newsletter-input-container{
     max-width : 600px;
     width : 90%;
-    margin : 40px auto 0;
+    margin : 20px auto 0;
     background-color : white;
     padding :  5px 15px;
     display: flex;
@@ -1106,6 +1124,10 @@ footer .newsletter-input-container{
     margin : 20px 0 0 0;
 }
 
+footer .newsletter-message{
+    margin : 0;
+}
+
 .copyright-container{
     width : 90%;
     max-width : 1200px;
@@ -1136,9 +1158,27 @@ footer .newsletter-input-container{
     border-right : 1px solid var(--light-border-clr);
 }
 
-.carousel-item img.big{
-    transform: scaleX(1.1);
-    object-position : 50% 20%;
+
+
+.hiding{
+    display : block;
+    animation : fadeUp 1s ease 10s forwards;
+}
+
+@keyframes fadeUp {
+    0%{
+        opacity : 1;
+        transform: translateY(0);
+    }
+
+    50%{
+        opacity: .5;
+    }
+
+    100%{
+        opacity : 0;
+        transform: translateY(-20px);
+    }
 }
 
 @media(min-width : 1200px){
@@ -1274,7 +1314,7 @@ footer .newsletter-input-container{
     }
 
     .carousel-item p{
-        font-size : .8rem;
+    
         margin-top : 0;
         padding: 0 5px;
     }

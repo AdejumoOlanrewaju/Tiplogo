@@ -15,10 +15,10 @@
                                 </span>
                                 <span></span>
                             </div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                Delectus quasi dolorem animi, quas consequuntur mollitia 
-                                natus aliquid inventore modi ad officia sunt 
-                                iusto deserunt ducimus, rem magni autem eligendi blanditiis.
+                            <p>     
+                                Our enterprise specializes in sourcing the freshest crayfish 
+                                Join us on a culinary journey and experience the difference that fresh, 
+                                responsibly sourced seafood can make in your dishes.
                             </p>
                             <!-- <div class = "header-cta-container">
                                 <a href = "#" class = "cta-1">GET STARTED NOW</a>
@@ -133,12 +133,18 @@
                     <h3 class = "head">Stay Always In Touch</h3>
                 </div>
 
-                <p class = "newsletter-section-details">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Iure doloribus earum ipsum velit amet sequi delectus, 
-                    similique nobis 
+                <p class = "newsletter-section-details">        
+                    Subscribe to our newsletter to get the latest update about
+                    our products.
                 </p>
 
+                
+                {% for messages in messages %}
+                    <p class = "newsletter-message">{{messages}}</p>
+                {% endfor %}
+
                 <form class = "newsletter-input-container">
+                    {% csrf_token %}
                     <input type = "text" placeholder="Enter Your Email" required name = "email"/>
                     <button type = "submit"><img alt = "send message icon" src = "/static/img/message.svg"></button>
                 </form>

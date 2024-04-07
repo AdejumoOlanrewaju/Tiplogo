@@ -1,5 +1,9 @@
 @import url("pages.css");
 
+.extend-mis.page{
+    background : white;
+}
+
 .extend-mis.header{
     min-height : 80px;
     height : 80px;
@@ -200,19 +204,40 @@
 }
 
 .extend-text-section{
-    padding : 20px 40px;
-    background : white;
+    padding: 40px 10px;
+    background: white;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
 }
 
-.extend-text-section h3{
+.extend-text-section .head-text{
     font-size : clamp(2.8rem, 5.5vw, 4rem);
     margin-bottom : 0;
 }
 
+.extend-text-section .sub-text{
+    font-size: clamp(1.8rem, 4.5vw, 2rem);
+    margin-bottom: 0;
+    color: rgba(0, 0, 0, .7);
+}
+
 .extend-text-section p{
-    color : rgba(0,0,0,.8);
-    line-height : 1.7;
-    font-size : 1.1rem;
+    color: rgba(0, 0, 0, .8);
+    line-height: 1.7;
+    font-size: 1.1rem;
+    margin: 10px 0 20px;
+}
+
+.privacy-list{
+    margin-bottom : 10px;
+}
+
+.privacy-list li{
+    list-style: disc;
+    padding : 20px 0 10px 0px;
+    margin-left : 20px;
+
 }
 
 .errorList li{

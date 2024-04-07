@@ -93,10 +93,10 @@ if(carouselContainer){
     }
 
     nextBtn.addEventListener("click", (e) => {
-        clearInterval(intervalId)
-        setTimeout(() => {
-            autoSlide()
-        }, 2000)
+        // clearInterval(intervalId)
+        // setTimeout(() => {
+        //     autoSlide()
+        // }, 2000)
         nextImage()
     })
 
@@ -114,10 +114,10 @@ if(carouselContainer){
     }
 
     prevBtn.addEventListener("click", () => {
-        clearInterval(intervalId)
-        setTimeout(() => {
-            autoSlide()
-        }, 2000)
+        // clearInterval(intervalId)
+        // setTimeout(() => {
+        //     autoSlide()
+        // }, 2000)
         prevImage()
     })
     function prevImage(){
@@ -138,7 +138,7 @@ if(carouselContainer){
         intervalId = setInterval(nextImage, 3000)
     }
 
-    //  autoSlide()
+     autoSlide()
 
     function touchSlide(){
         carouselContainer.addEventListener("touchstart", (e) => {

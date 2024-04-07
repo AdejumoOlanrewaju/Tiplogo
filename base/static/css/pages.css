@@ -77,12 +77,12 @@
 
 
 .banner-content p{
-    max-width : 600px;
-    width: 90%;
-    margin  : 30px auto 0;
-    color : var(--text-light-clr);
-    line-height: 1.6; 
+    max-width: 700px;
+    margin: 30px auto 0;
+    color: var(--text-mid-light-clr);
+    line-height: 1.6;
     padding: 0 5px;
+    font-size: clamp(.9rem, 2.5vw, 1.2rem);
 }
 
 .banner-content img{
