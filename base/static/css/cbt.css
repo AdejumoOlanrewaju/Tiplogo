@@ -10,7 +10,7 @@
 
 .section-text-template{
     width: 55%;
-    padding : 100px 20px 70px 30px;
+    padding : 70px 20px 70px 30px;
     background : white;
 }
 
@@ -25,16 +25,16 @@
     color : rgba(0,0,0,.6);
 }
 
-.section-text-template h2{
-    font-size : clamp(3.5rem, 4.5vw, 2rem);
+.section-text-template h3{
+    font-size : clamp(3rem, 4.5vw, 2rem);
     margin-bottom : 15px;
 }
 
 .section-text-template p{
-    font-size : 14px;
-    line-height : 1.9;
+    font-size : 1.1rem;
+    line-height : 1.7;
     max-width : 600px;
-    color : rgba(0,0,0,.7)
+    color : rgba(0,0,0,.85)
 }
 
 .cbt-services-section{
@@ -139,8 +139,7 @@
 }
 
 .cbt-service-box p{
-    font-size : .9rem;
-    color : rgba(0,0,0,.6);
+    color : rgba(0,0,0,.85);
     line-height: 1.6;
 }
 

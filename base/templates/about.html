@@ -1,71 +1,6 @@
-<!-- About_us.html -->
-
-{%load static%}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet" href = "{% static 'css/extend-mis.css'%}">
-    <script defer src = "{% static 'js/script.js'%}"></script>
-    <title>TIPLOGO LOGISTICS</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block content %}
     <section class = "extend-mis page">
-        <header class = "extend-mis header">
-            <nav>
-                <div class = "container">
-                    <!-- <img src = "/static/img/logo2.jpg" class = "logo"/> -->
-                    <a href = "/"><span class = "logo">TIPLOGO</span></a>
-    
-                    
-                    <div class = "hamburger">
-                        <span></span>
-                        <span></span>
-                        <span></spagn>
-                    </div>
-                    
-                             
-                    <ul class = "nav-links-parent">
-                        <li><a href = "/" class = "nav-link">HOME</a></li>
-                        <li><a href = "tiplogo-cbt" class = "nav-link">TIPLOGO CBT CENTER</a></li>
-                        <li><a href = "tiplogo-led" class = "nav-link">TIPLOGO LED BULBS</a></li>
-                        <li><a href = "tiplogo-logistics" class = "nav-link">TIPLOGO LOGISTICS</a></li>
-                        <li><a href = "tiplogo-ict" class = "nav-link">TIPLOGO ICT</a></li>
-                        <li><a href = "tiplogo-fish" class = "nav-link">TIPLOGO SEA FOODS</a></li>
-                    </ul>
-                    
-                    <a class = "subscribe-btn" href = "#newsletter">Subscribe</a>
-                    
-                </div>
-            </nav>
-            
-            <div class = "mobile-menu">
-    
-                <div class = "task-bar">
-                    <a href = "/"><span class = "logo">TIPLOGO</span></a>
-                    <div class = "close-menu">
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-    
-                <div class = "mobile-navigation">
-                    <ul class = "mobile-links-parent">
-                        <li><a href = "/" class = "nav-link">HOME</a></li>
-                        <li><a href = "tiplogo-cbt" class = "nav-link">TIPLOGO CBT CENTER</a></li>
-                        <li><a href = "tiplogo-led" class = "nav-link">TIPLOGO LED BULBS</a></li>
-                        <li><a href = "tiplogo-logistics" class = "nav-link">TIPLOGO LOGISTICS</a></li>
-                        <li><a href = "tiplogo-ict" class = "nav-link">TIPLOGO ICT</a></li>
-                        <li><a href = "tiplogo-fish" class = "nav-link">TIPLOGO SEA FOODS</a></li>
-                    </ul>
-        
-                    <a class = "mobile-subscribe-btn" href = "#newletter">Subscribe</a>
-                </div>
-    
-                
-            </div>
-        </header>
 
         <section class = "about extend-banner-section">
             <h2>About Us</h2>
@@ -87,9 +22,8 @@
                 This services include: Printing Admission letters for school or jamb, doing change of institution, 
                 printing Jamb results and Waec Results to be able to tender for any academic use case and many more.
                 We also provide various cybercafe services as a general merchant such as: Typing, Laminating, Scanning, 
-                Photostat, Binding etc. We also a CBT center that is well equipped and secured to proper and efficient
-                conduction and running of computer based tests like Jamb and Jamb Mock, reducing students worry of unexpected
-                system failure or power outage.
+                Photostat, Binding etc. We also have a CBT center that is well equipped and secured for proper and efficient conduct of any kind of CBT based exams. 
+                Be it JAMB, NECO, WAEC, NURSING COUNCIL, COLLEGE OF HEALTH TECHNOLOGY COUNCIL EXAMS, ONLINE BASED EXAMS, ONLINE BASED JOB INTERVIEWS ETC. WE HAVE EVOLVED!
             </p>
 
      
@@ -112,89 +46,6 @@
             </p>
         </section>
 
-        
-        <footer>
-            <div class = "footer-wrapper">
-                <div class = "address-box">
-                    <h3 class = "box-head">
-                        ADDRESS
-                        <span class = "box-head-underline"></span>
-                    </h3>
-        
-                    <ul class = "address-list">
-                        <li class = "address-details">
-                            <img class = "address-img" alt = "" src = "/static/img/location.svg">
-                            <p class = "address-text">12 Ali Balogun Street, Okitipupa</p>
-                        </li>
-        
-                        <li class = "phone-details">
-                            <img class = "address-img" alt = "" src = "/static/img/phone.svg">
-                            <p class = "address-text">+234 806 959 8685</p>
-                        </li>
-        
-                        
-                        <li class = "mail-details">
-                            <img class = "address-img" alt = "" src = "/static/img/mail.svg">
-                            <p class = "address-text">tiplogo1@gmail.com</p>
-                        </li>
-        
-        
-                    </ul>
-        
-                    <div class = "social-media-box">
-                        <span class= "social-media-span"><a href = ""><img src = "/static/img/facebook.svg" alt = ""></a></span>
-                        <span class= "social-media-span"><a href = ""><img src = "/static/img/instagram.svg" alt = ""></a></span>
-                        <span class= "social-media-span"><a href = ""><img src = "/static/img/linkedin.svg" alt = ""></a></span> 
-                        <span class= "social-media-span"><a href = "https://wa.me/+234 806 959 8685"><img src = "/static/img/whatsapp.svg" alt = ""></a></span>
-                        
-                    </div>
-                </div>
-        
-                <div class = "quick-link-box">
-                    <h3 class = "box-head">
-                        QUICK-LINK
-                        <span class = "box-head-underline"></span>
-                    </h3>
-        
-                    <div class = "quick-links-container">
-                        <a href = "about">About Us</a>
-                        <a href = "contact">Contact Us</a>
-                        <a href = "">Privacy Policy</a>
-                        <a href = "">Terms & Conditions</a>
-                    </div>
-                </div>
-        
-                <div class = "newsletter-box">
-                    <h3 class = "box-head">
-                        NEWSLETTER
-                        <span class = "box-head-underline"></span>
-                    </h3>
-        
-                    <p class = "newsletter-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat porro at, earum deleniti provident vitae</p>
-                    
-                    
-                    <form class = "newsletter-input-container">
-                        <input type = "text" placeholder="Enter Your Email" required name = "email"/>
-                        <button type = "submit"><img alt = "send message icon" src = "/static/img/message.svg"></button>
-                    </form>
-                </div>
-            </div>
-            <div class = "copyright-container">
-                <div class = "site-details">
-                    <p class = "site-name">Tiplogo.com, All Right Reserved. Designed by <a class = "creator-link" href = "">LB Codex</a> </p>
-                    <p class = "site-distribution"></p>
-                </div>
-        
-                <div class = "copyright-links-container">
-                    <a href = "">Home</a>
-                    <a href = "">Subscribe</a>
-                    <a href = "">Products</a>
-                    <a href = "">Services</a>
-                </div>
-            </div>
-        </footer>
     </section>
 
-
-    
-</body>
+{% endblock %}

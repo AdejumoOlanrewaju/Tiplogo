@@ -93,10 +93,6 @@ if(carouselContainer){
     }
 
     nextBtn.addEventListener("click", (e) => {
-        // clearInterval(intervalId)
-        // setTimeout(() => {
-        //     autoSlide()
-        // }, 2000)
         nextImage()
     })
 
@@ -115,11 +111,9 @@ if(carouselContainer){
 
     prevBtn.addEventListener("click", () => {
         // clearInterval(intervalId)
-        // setTimeout(() => {
-        //     autoSlide()
-        // }, 2000)
         prevImage()
     })
+
     function prevImage(){
         if(counter == 0)return;        
         carouselItems[counter].style.animation = "prev1 .5s ease forwards"
@@ -133,6 +127,7 @@ if(carouselContainer){
         carouselItems[counter].style.animation = "prev2 .5s ease forwards"
     }
 
+
     let intervalId
     function autoSlide(){
         intervalId = setInterval(nextImage, 3000)
@@ -140,13 +135,32 @@ if(carouselContainer){
 
      autoSlide()
 
+    function toggleAutoSlide(){
+        let carouselButtons = carouselContainer.querySelectorAll("button")
+        let carouselLinks = carouselContainer.querySelectorAll("a")
+        stopAnimOnHover(carouselButtons)
+        stopAnimOnHover(carouselLinks)
+    }
+
+    toggleAutoSlide()
+
+    function stopAnimOnHover(elements){
+        elements.forEach(el => {
+            el.addEventListener("mouseover", () => clearInterval(intervalId))
+            el.addEventListener("mouseout", () => autoSlide())
+        })
+    }
+
+    let onlySwipe = false
     function touchSlide(){
         carouselContainer.addEventListener("touchstart", (e) => {
             touchStartX = e.touches[0].clientX
+            clearInterval(intervalId)
         })
         
 
         carouselContainer.addEventListener("touchmove", (e) => {
+            onlySwipe = true
             touchEndX = e.touches[0].clientX
             // console.log(touchEndX)
 
@@ -156,14 +170,19 @@ if(carouselContainer){
             //this script is to prevent swipe if we click on any of the children of the carousel items
             if(e.target.closest(".carousel-item > button "))return
 
-            swipeDifference = touchStartX - touchEndX
-            if(swipeDifference > threshold){
-                console.log("swiped right")
-                nextImage()
-            }else if(swipeDifference < -threshold){
-                console.log("swiped left")
-                prevImage()
+            if(onlySwipe == true){
+                swipeDifference = touchStartX - touchEndX
+                if(swipeDifference > threshold){
+                    console.log("swiped right")
+                    nextImage()
+                }else if(swipeDifference < -threshold){
+                    console.log("swiped left")
+                    prevImage()
+                }
+                
             }
+            onlySwipe = false
+            autoSlide()
         })
     }
 
