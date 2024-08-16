@@ -188,7 +188,21 @@ if(carouselContainer){
 
     touchSlide()
 
-
+    // Script to reduce carousel text size
+    function shortenText(el){
+        let carouselContentText = document.querySelectorAll(el)
+        carouselContentText.forEach(contentEl => {
+            let contentText = contentEl.textContent
+            console.log(contentText.length)
+            if(contentText.length > 181){
+                let shortText = contentText.slice(0, 181)
+                console.log(shortText)
+                contentEl.textContent = shortText + "..."
+            }
+        }) 
+    }
+    
+    shortenText(".carousel-content-text")
 
     // Script for handling responsive navigation
 

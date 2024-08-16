@@ -201,6 +201,7 @@
     font-size : clamp(3rem, 5.5vw, 5rem);
     margin : auto;
     color : rgba(255,255,255,.8);
+    text-align: center;
 }
 
 .extend-text-section{

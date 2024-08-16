@@ -189,14 +189,9 @@ header.contact-header{
     }
 
     .contact-banner-container{
-        height : calc(100vh - 80px);
-        order : 2;
-
+        height : 350px;
     }
 
-    .contact-form-container{
-        order : 1;
-    }
 }
 
 .errorlist li{
